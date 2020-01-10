@@ -12,8 +12,19 @@ public class CountdownState : GameState
 
     public override GameManager _GameManager { get; set; }
 
+    private float _timer;
+
+    public override void OnStateEnter()
+    {
+        _timer = _GameManager._GameSettings._ShopTime;
+
+    }
+
     public override Type Tick()
     {
+        _timer -= Time.deltaTime;
+        if (_timer <= 0)
+            return typeof(WaveState);
         return null;
     }
 }

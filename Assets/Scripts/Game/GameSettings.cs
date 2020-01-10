@@ -10,6 +10,9 @@ public class GameSettings
     [Header("Shopping Settings")]
     [SerializeField] public float _ShopTime = 10F; //10 Seconds
 
+    [Header("Wave Settings")]
+    [SerializeField] public float _countdownTime = 5F;
+
 
 
     [Header("IN GAME HUD ELEMENTS")]

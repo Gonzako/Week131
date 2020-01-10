@@ -10,10 +10,30 @@ public class WaveState : GameState
         _GameManager = _gm;
     }
 
+    public int _wavenumber;
     public override GameManager _GameManager { get; set; }
+
+    private bool _EnemiesDefeated;
+
+
+    public override void OnStateEnter()
+    {
+        _wavenumber += 1;
+
+    }
 
     public override Type Tick()
     {
+        if (_EnemiesDefeated)
+        {
+            return typeof(ShopState);
+        }
         return null;
     }
+
+    public void setEnemiesDefeated()
+    {
+        _EnemiesDefeated = true;
+    }
+
 }
