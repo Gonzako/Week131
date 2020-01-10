@@ -32,7 +32,7 @@ public class ShopViewManager : MonoBehaviour
     {
         if (state.GetType() == typeof(ShopState))
         {
-            _panel.SetActive(true);
+           // _panel.SetActive(true);
         }
     }
 

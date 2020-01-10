@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour
     private GameStateManager _StateHandler;
     private ShopViewManager _shopManager;
 
+    public GameSettings _GameSettings;
+
     public delegate void GameEvents();
     public GameEvents onGameFailure;
 
