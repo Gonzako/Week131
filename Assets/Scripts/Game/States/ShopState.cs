@@ -11,8 +11,21 @@ public class ShopState : GameState
 
     public override GameManager _GameManager {get; set;}
 
+    public override void OnStateEnter()
+    {
+   
+    }
+
+    public override void OnStateExit()
+    {
+    }
+
     public override Type Tick()
     {
+        if (_GameManager.ShoppingDone())
+        {
+            return typeof(CountdownState);
+        }
         return null;
     }
 }

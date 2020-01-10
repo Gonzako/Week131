@@ -6,13 +6,24 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     private GameStateManager _StateHandler;
+    private ShopViewManager _shopManager;
 
     public delegate void GameEvents();
     public GameEvents onGameFailure;
 
+    private bool _shoppingDone;
+
     private void OnEnable()
     {
         SetupStates();
+        _shopManager = GameObject.FindObjectOfType<ShopViewManager>();
+        _shoppingDone = false;
+        _shopManager.onShoppingDone += SetShouldSwitch;
+    }
+
+    private void OnDisable()
+    {
+       _shopManager.onShoppingDone -= SetShouldSwitch;
     }
 
     private void SetupStates()
@@ -24,5 +35,15 @@ public class GameManager : MonoBehaviour
             {typeof(WaveState), new WaveState(this)},
         };
         _StateHandler.SetStates(states);
+    }
+
+    public void SetShouldSwitch()
+    {
+        _shoppingDone = true;
+    }
+
+    public bool ShoppingDone()
+    {
+        return _shoppingDone;
     }
 }
