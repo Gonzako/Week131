@@ -51,7 +51,6 @@ public class GameStateManager : MonoBehaviour
         _currentState = _availableStates[nextstate];
         onStateChanged?.Invoke(_currentState);
         _currentState?.OnStateEnter();
-        gamestatetring = _currentState.ToString();
         Debug.Log("Game State Changed To: "+_currentState.ToString());
     }
 }
