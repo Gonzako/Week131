@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using System;
+﻿using System;
 
 public class WaveState : GameState
 {
@@ -15,11 +12,11 @@ public class WaveState : GameState
 
     private bool _EnemiesDefeated;
 
-
     public override void OnStateEnter()
     {
         _wavenumber += 1;
 
+        _GameManager._GameSettings._waveCount.text = "Wave "+_wavenumber.ToString();
     }
 
     public override Type Tick()
@@ -35,5 +32,4 @@ public class WaveState : GameState
     {
         _EnemiesDefeated = true;
     }
-
 }

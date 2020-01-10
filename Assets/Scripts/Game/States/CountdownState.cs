@@ -20,11 +20,19 @@ public class CountdownState : GameState
 
     }
 
+    public override void OnStateExit()
+    {
+        _GameManager._GameSettings._timerHudTxt.enabled = false;
+    }
+
     public override Type Tick()
     {
         _timer -= Time.deltaTime;
+        _GameManager._GameSettings._timerHudTxt.text =
+          "Next wave will start in.. " + Mathf.Round(_timer).ToString();
         if (_timer <= 0)
             return typeof(WaveState);
+        else
         return null;
     }
 }

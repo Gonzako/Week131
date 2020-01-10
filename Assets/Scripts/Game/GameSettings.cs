@@ -12,9 +12,11 @@ public class GameSettings
 
     [Header("Wave Settings")]
     [SerializeField] public float _countdownTime = 5F;
+    
 
 
 
     [Header("IN GAME HUD ELEMENTS")]
     [SerializeField] public Text _timerHudTxt;
+    [SerializeField] public Text _waveCount;
 }
