@@ -14,4 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CategoryName: In-Game
   DatabaseType: 0
-  Names: []
+  Names:
+  - RestartLevel
+  - BackMM
+  - 
