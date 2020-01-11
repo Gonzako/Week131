@@ -7,16 +7,25 @@ public class BaseMovement : MonoBehaviour
     [SerializeField]
     private float speed = 5f;
 
+
+    private Rigidbody2D rb;
     private Vector2 inputVector;
+
+    private void Start()
+    {
+        rb = GetComponent<Rigidbody2D>();
+    }
 
     private void Update()
     {
-        inputVector = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+        inputVector = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")).normalized;
+        if (inputVector.magnitude == 0) rb.velocity = Vector2.zero;
     }
 
     private void FixedUpdate()
     {
-        transform.Translate(inputVector * speed * Time.fixedDeltaTime);
+        rb.velocity = inputVector * speed;
+        
     }
 
 

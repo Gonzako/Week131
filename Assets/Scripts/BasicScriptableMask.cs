@@ -11,12 +11,13 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Gameplay/SimpleMask")]
 public class BasicScriptableMask : ScriptableObject
 {
-
-    Sprite frontMask, backMask, sideMask;
-    baseBullet bulletToSpawn;
+    [SerializeField]
+    private Sprite frontMask, backMask, sideMask; //TODO: might want to look into making an editor script for these
+    [SerializeField]
+    private baseBullet bulletToSpawn;
 
     [SerializeField]
-    public float coolDownTime = 0.2f;
+    private float coolDownTime = 0.2f;
     private float cooldownTimer = 0;
 
     public void Fire(Vector3 position, float rotation)
