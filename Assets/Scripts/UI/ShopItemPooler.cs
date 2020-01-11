@@ -34,9 +34,9 @@ public class ShopItemPooler : MonoBehaviour
         for(int i = 0; i < _amount; i++)
         {
             GameObject inst = Instantiate(_poolableItem);
-            inst.transform.parent = _transform;
-            inst.SetActive(false);
+            inst.transform.SetParent(_transform);
             _pooledObjects.Add(inst);
+            inst.SetActive(false);
         }
     }
 

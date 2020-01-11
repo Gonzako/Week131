@@ -9,57 +9,70 @@ public class ShopViewManager : MonoBehaviour
     // Start is called before the first frame update
     private GameStateManager _gameStateManager;
 
-    public delegate void ShopTransactionEvents(Mask mask);
+    public delegate void ShopTransactionEvents(ItemShopMask mask);
     public ShopTransactionEvents onMaskBought;
 
-    public delegate void ShopEvents();
+    public delegate void ShopEvents(List<ItemShopMask> inventory);
     public ShopEvents onShoppingDone;
     public ShopEvents onShopOpen;
+    public ShopEvents onShopClose;
  
 
-    [SerializeField] private List<Mask> _shopInventory;
+    [SerializeField] private List<ItemShopMask> _shopInventory;
     [SerializeField] private UIView _panel;
-    
 
     private void OnEnable()
     {
         _gameStateManager = FindObjectOfType<GameStateManager>();
+
         _gameStateManager.onStateChanged += ShopHandle;
+        ShopOpener.onAnyOpenCommand += OpenShop;
     }
 
     private void OnDisable()
     {
         _gameStateManager.onStateChanged -= ShopHandle;
+        ShopOpener.onAnyOpenCommand -= OpenShop;
     }
+
 
     private void ShopHandle(GameState state)
     {
         if (state.GetType() != typeof(ShopState))
         {
-            CloseShop();
+            //CloseShop();
         }
     }
 
-    public void Buy(Mask mask)
+    public void Buy(ItemShopMask mask)
     {
         onMaskBought?.Invoke(mask);
     }
 
     public void OpenShop()
     {
-        onShopOpen?.Invoke();
-        _panel.Show();
+        if (_panel.IsHidden)
+        {
+            onShopOpen?.Invoke(_shopInventory);
+            _panel.Show();
+        }
+        else
+        {
+            onShopClose?.Invoke(_shopInventory);
+            _panel.Hide();
+        }
         
-    }
-
-    public void CloseShop()
-    {
-        _panel.Hide();
     }
 }
 
-public struct Mask
+[System.Serializable]
+public struct ItemShopMask
 {
-    Sprite _maskSprite;
-    int _maskCost;
+    public Mask(string name, int cost)
+    {
+        _name = name;
+        _maskCost = cost;
+    }
+    public string _name;
+    public int _maskCost;
 }

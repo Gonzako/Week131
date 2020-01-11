@@ -4,20 +4,22 @@ using UnityEngine;
 
 public class ItemListManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+
+    ShopViewManager _shopmanager;
+    private void OnEnable()
     {
-        
+        _shopmanager = FindObjectOfType<ShopViewManager>();
+        _shopmanager.onShopOpen += InstantiateShopInventory;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void InstantiateShopInventory(List<ItemShopMask>inventory)
     {
-        
-    }
-
-    private void InstantiateShopInventory()
-    {
-
+        if(inventory.Count > 0)
+        foreach(ItemShopMask m in inventory)
+        {
+            GameObject on = ShopItemPooler._instance.GetPooledObject();
+            on.SetActive(true);
+            on.GetComponent<ItemInformation>().SetData(m);
+        }
     }
 }

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5199452391143647923}
   - component: {fileID: 749402597778235734}
   m_Layer: 5
-  m_Name: Image
+  m_Name: img_masksprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -359,7 +359,7 @@ GameObject:
   - component: {fileID: 8139741656101945476}
   - component: {fileID: 5447519772299955072}
   m_Layer: 5
-  m_Name: Text (1)
+  m_Name: txt_cost
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -436,7 +436,7 @@ GameObject:
   - component: {fileID: 1808861562755442181}
   - component: {fileID: 3949568091705270950}
   m_Layer: 5
-  m_Name: Text
+  m_Name: txt_name
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -513,6 +513,7 @@ GameObject:
   - component: {fileID: 2588836807388373835}
   - component: {fileID: 3483438163843134298}
   - component: {fileID: 1794662042729078450}
+  - component: {fileID: -5874382796523695661}
   m_Layer: 5
   m_Name: Item
   m_TagString: Untagged
@@ -604,3 +605,18 @@ MonoBehaviour:
   m_ChildControlHeight: 0
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
+--- !u!114 &-5874382796523695661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7123429014810691212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d2bd6502d9ced94a8d8e51bdcf873f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maskName: {fileID: 0}
+  _cost: {fileID: 0}
+  _maskSprite: {fileID: 0}
