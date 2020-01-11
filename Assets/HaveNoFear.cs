@@ -13,7 +13,10 @@ public class HaveNoFear : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("Have no fear, Jon is here"); 
-        
+        if ((int)Time.time % 10 == 0)
+        {
+
+            Debug.Log("Have no fear, Jon is here");  
+        }
     }
 }

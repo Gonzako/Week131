@@ -1,7 +1,46 @@
 fileFormatVersion: 2
 guid: a4c8d9ca7021d854a872d4233c21b100
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 3224111340313633024
+    second: Retro Style Basic Mobile Game UI_0
+  - first:
+      213: 2019247026288000434
+    second: Retro Style Basic Mobile Game UI_1
+  - first:
+      213: -9216374503837589952
+    second: Retro Style Basic Mobile Game UI_2
+  - first:
+      213: 7483714159369676912
+    second: Retro Style Basic Mobile Game UI_3
+  - first:
+      213: 4572440779653710561
+    second: Retro Style Basic Mobile Game UI_4
+  - first:
+      213: 2818888695798826770
+    second: Retro Style Basic Mobile Game UI_5
+  - first:
+      213: -7374379366613713771
+    second: Retro Style Basic Mobile Game UI_6
+  - first:
+      213: -7147406204478255421
+    second: Retro Style Basic Mobile Game UI_7
+  - first:
+      213: 7933133668239141053
+    second: Retro Style Basic Mobile Game UI_8
+  - first:
+      213: -3519276725657396021
+    second: Retro Style Basic Mobile Game UI_9
+  - first:
+      213: 8734635733589427822
+    second: Retro Style Basic Mobile Game UI_10
+  - first:
+      213: 1339736489869333859
+    second: Retro Style Basic Mobile Game UI_11
+  - first:
+      213: -3805039766977249634
+    second: Retro Style Basic Mobile Game UI_12
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -132,11 +171,284 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Retro Style Basic Mobile Game UI_0
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 590
+        width: 459
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bffb9fedd2539d9499506f737662ce81
+      internalID: 3224111340313633024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro Style Basic Mobile Game UI_1
+      rect:
+        serializedVersion: 2
+        x: 478
+        y: 590
+        width: 459
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4f8810ece778d341a77c84b3cbb48c7
+      internalID: 2019247026288000434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro Style Basic Mobile Game UI_2
+      rect:
+        serializedVersion: 2
+        x: 939
+        y: 23
+        width: 905
+        height: 667
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2cd22b4a57d7d44286dcbffbb07a6f5
+      internalID: -9216374503837589952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro Style Basic Mobile Game UI_3
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 481
+        width: 459
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d386855e20b75ad4a80ffaea1a8f18b7
+      internalID: 7483714159369676912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro Style Basic Mobile Game UI_4
+      rect:
+        serializedVersion: 2
+        x: 478
+        y: 481
+        width: 360
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bc83dd4f9bb0364eb8be9061b61d50b
+      internalID: 4572440779653710561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro Style Basic Mobile Game UI_5
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 369
+        width: 459
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78f7ea2e604690a449fe16d9cf28bc72
+      internalID: 2818888695798826770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro Style Basic Mobile Game UI_6
+      rect:
+        serializedVersion: 2
+        x: 479
+        y: 370
+        width: 360
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eee3b2586331ab744a90c060eaa8b2b9
+      internalID: -7374379366613713771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro Style Basic Mobile Game UI_7
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 264
+        width: 459
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b352ccae3d8a3f44a6d1edaee23a17c
+      internalID: -7147406204478255421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro Style Basic Mobile Game UI_8
+      rect:
+        serializedVersion: 2
+        x: 529
+        y: 253
+        width: 360
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7321a1c0bdbb24d4a91771980d8f9e06
+      internalID: 7933133668239141053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro Style Basic Mobile Game UI_9
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 154
+        width: 495
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47d9d5a7d342c2f40b4fc5a41833a5f1
+      internalID: -3519276725657396021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro Style Basic Mobile Game UI_10
+      rect:
+        serializedVersion: 2
+        x: 529
+        y: 150
+        width: 360
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef4123c2c6fe7fc49a8903bddc91a36f
+      internalID: 8734635733589427822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro Style Basic Mobile Game UI_11
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 53
+        width: 502
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e882e7191ee420c4a94132b47dab34e5
+      internalID: 1339736489869333859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro Style Basic Mobile Game UI_12
+      rect:
+        serializedVersion: 2
+        x: 529
+        y: 47
+        width: 360
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ef5ea530acddb744b353acb21b9266a
+      internalID: -3805039766977249634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 768c883f6df5710409482eba47e5bfee
     internalID: 0
     vertices: []
     indices: 
