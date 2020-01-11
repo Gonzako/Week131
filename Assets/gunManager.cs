@@ -4,13 +4,18 @@
  * Gonzako123@gmail.com
  *
  */
- 
+
+using System;
 using UnityEngine;
  
 public class gunManager : MonoBehaviour
 {
     #region Public Fields
-    public BasicScriptableMask mask;
+    [SerializeField]
+    private BasicScriptableMask mask;
+    public BasicScriptableMask Mask { get { return mask; } set { mask = value; onMaskChange.Invoke(value, this.gameObject); } }
+
+    public static event Action<BasicScriptableMask, GameObject> onMaskChange;
     public Transform firingPosition;
     #endregion
  
@@ -24,7 +29,7 @@ public class gunManager : MonoBehaviour
     #endregion
 
 
-    #if false
+    #if true
     #region Unity API
 
     void Start()

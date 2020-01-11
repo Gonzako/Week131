@@ -11,6 +11,14 @@ using UnityEngine;
 public class maskAnimator : MonoBehaviour
 {
     #region Public Fields
+    [MinMaxSlider(-90, 90)]
+    public MinMax frontAngle;
+    [MinMaxSlider(0, 180)]
+    public MinMax rightAngle;
+    [MinMaxSlider(-180, 0)]
+    public MinMax leftAngle;
+    [MinMaxSlider(90, 270)]
+    public MinMax backAngle;
     #endregion
 
     #region Private Fields
@@ -24,14 +32,17 @@ public class maskAnimator : MonoBehaviour
     #endregion
 
     #region Public Methods
-    public void updateMask(BasicScriptableMask data)
+    public void updateMask(BasicScriptableMask data, GameObject player)
     {
-
+        leftMask.GetComponent<SpriteRenderer>().sprite = data.sideMask;
+        rightMask.GetComponent<SpriteRenderer>().sprite = data.sideMask;
+        backMask.GetComponent<SpriteRenderer>().sprite = data.backMask;
+        frontMask.GetComponent<SpriteRenderer>().sprite = data.frontMask;
     }
     #endregion
 
     #region Private Methods
-
+    //gets called every frame
     private void updateAnimator()
     {
         AM.SetBool(walkingVariable, walking);
@@ -42,9 +53,14 @@ public class maskAnimator : MonoBehaviour
     #if true
     #region Unity API
 
-    void Start()
+    void OnEnable()
     {
+        gunManager.onMaskChange += updateMask;
         AM = GetComponent<Animator>();
+    }
+    private void OnDisable()
+    {
+        gunManager.onMaskChange -= updateMask;
     }
 
     private void Update()

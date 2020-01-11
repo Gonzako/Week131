@@ -12,9 +12,9 @@ using UnityEngine;
 public class BasicScriptableMask : ScriptableObject
 {
     [SerializeField]
-    private Sprite frontMask, backMask, sideMask; //TODO: might want to look into making an editor script for these
+    public Sprite frontMask, backMask, sideMask; //TODO: might want to look into making an editor script for these
     [SerializeField]
-    private baseBullet bulletToSpawn;
+    public baseBullet bulletToSpawn;
 
     [SerializeField]
     private float coolDownTime = 0.2f;
