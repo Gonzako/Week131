@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Doozy;
+using Doozy.Engine.UI;
 
 public class ShopViewManager : MonoBehaviour
 {
@@ -12,27 +14,29 @@ public class ShopViewManager : MonoBehaviour
 
     public delegate void ShopEvents();
     public ShopEvents onShoppingDone;
+    public ShopEvents onShopOpen;
  
 
     [SerializeField] private List<Mask> _shopInventory;
-    [SerializeField] private GameObject _panel;
+    [SerializeField] private UIView _panel;
+    
 
     private void OnEnable()
     {
         _gameStateManager = FindObjectOfType<GameStateManager>();
-        _gameStateManager.onStateChanged += ShowView;
+        _gameStateManager.onStateChanged += ShopHandle;
     }
 
     private void OnDisable()
     {
-        _gameStateManager.onStateChanged -= ShowView;
+        _gameStateManager.onStateChanged -= ShopHandle;
     }
 
-    private void ShowView(GameState state)
+    private void ShopHandle(GameState state)
     {
-        if (state.GetType() == typeof(ShopState))
+        if (state.GetType() != typeof(ShopState))
         {
-           // _panel.SetActive(true);
+            CloseShop();
         }
     }
 
@@ -41,10 +45,16 @@ public class ShopViewManager : MonoBehaviour
         onMaskBought?.Invoke(mask);
     }
 
-    public void Ready()
+    public void OpenShop()
     {
-        _panel.SetActive(false);
-        onShoppingDone?.Invoke();
+        onShopOpen?.Invoke();
+        _panel.Show();
+        
+    }
+
+    public void CloseShop()
+    {
+        _panel.Hide();
     }
 }
 
