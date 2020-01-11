@@ -456,3 +456,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cde0c3f7c8646f4eb980260aa8af553, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  leftMask: {fileID: 3525867435350448538}
+  rightMask: {fileID: 3525867433753320302}
+  backMask: {fileID: 3525867435559462368}
+  frontMask: {fileID: 3525867433839653220}

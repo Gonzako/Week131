@@ -3,7 +3,14 @@ guid: ae74076d6d64e774bba10d8278738fd8
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - frontMask: {fileID: 1624711070866809267, guid: 8a39e0c1ea8a2bf4aad52eb7e4520da2,
+      type: 3}
+  - backMask: {fileID: -4961266976480404647, guid: 8a39e0c1ea8a2bf4aad52eb7e4520da2,
+      type: 3}
+  - sideMask: {fileID: 6269675505405548013, guid: 8a39e0c1ea8a2bf4aad52eb7e4520da2,
+      type: 3}
+  - bulletToSpawn: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
