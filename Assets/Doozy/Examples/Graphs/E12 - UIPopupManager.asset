@@ -3,8 +3,9 @@
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -20,12 +21,13 @@ MonoBehaviour:
   m_version: 1
   m_description: 
   m_id: 1ecb758a-89ad-4403-abc5-0962a2a264d8
-  m_lastModified: 132080094563630111
+  m_lastModified: 132232383188820943
 --- !u!114 &114153285848370566
 MonoBehaviour:
   m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -126,6 +128,7 @@ MonoBehaviour:
   m_graphId: 1ecb758a-89ad-4403-abc5-0962a2a264d8
   m_id: 0d99beed-c0b6-451b-9409-3aff1d634668
   m_name: One
+  m_notes: 
   m_onEnterShowViews:
   - Category: Example
     InstantAction: 0
@@ -139,8 +142,9 @@ MonoBehaviour:
 --- !u!114 &114612019645042214
 MonoBehaviour:
   m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -194,12 +198,14 @@ MonoBehaviour:
   m_graphId: 1ecb758a-89ad-4403-abc5-0962a2a264d8
   m_id: f7c8d64b-990e-471f-acb6-0e6cff9bf4eb
   m_name: Start
+  m_notes: 
   ErrorNodeIsNotConnected: 0
 --- !u!114 &114665211809576150
 MonoBehaviour:
   m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -300,6 +306,7 @@ MonoBehaviour:
   m_graphId: 1ecb758a-89ad-4403-abc5-0962a2a264d8
   m_id: 4292ae76-30e4-41a5-8a94-bf5f95a997a7
   m_name: StartMenu
+  m_notes: 
   m_onEnterShowViews:
   - Category: Example
     InstantAction: 0

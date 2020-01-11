@@ -456,6 +456,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cde0c3f7c8646f4eb980260aa8af553, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  frontAngle:
+    min: 0
+    max: 0
+  rightAngle:
+    min: 0
+    max: 0
+  leftAngle:
+    min: 0
+    max: 0
+  backAngle:
+    min: 90
+    max: 90
   leftMask: {fileID: 3525867435350448538}
   rightMask: {fileID: 3525867433753320302}
   backMask: {fileID: 3525867435559462368}

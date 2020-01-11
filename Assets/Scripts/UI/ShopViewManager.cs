@@ -16,7 +16,9 @@ public class ShopViewManager : MonoBehaviour
     public ShopEvents onShoppingDone;
     public ShopEvents onShopOpen;
     public ShopEvents onShopClose;
- 
+
+    private const float _timeToWait = 2f;
+    private float _timerThatWaits = 0;
 
     [SerializeField] private List<ItemShopMask> _shopInventory;
     [SerializeField] private UIView _panel;
@@ -24,15 +26,15 @@ public class ShopViewManager : MonoBehaviour
     private void OnEnable()
     {
         _gameStateManager = FindObjectOfType<GameStateManager>();
-
-        _gameStateManager.onStateChanged += ShopHandle;
         ShopOpener.onAnyOpenCommand += OpenShop;
+        _gameStateManager.onStateChanged += ShopHandle;
+        //ShopOpener.onAnyOpenCommand += OpenShop;
     }
 
     private void OnDisable()
     {
         _gameStateManager.onStateChanged -= ShopHandle;
-        ShopOpener.onAnyOpenCommand -= OpenShop;
+        ShopOpener.onAnyOpenCommand -= OpenShop;        ShopOpener.onAnyOpenCommand -= OpenShop;        ShopOpener.onAnyOpenCommand -= OpenShop;        ShopOpener.onAnyOpenCommand -= OpenShop;        ShopOpener.onAnyOpenCommand -= OpenShop;        ShopOpener.onAnyOpenCommand -= OpenShop;
     }
 
 
@@ -51,15 +53,22 @@ public class ShopViewManager : MonoBehaviour
 
     public void OpenShop()
     {
-        if (_panel.IsHidden)
+        if (_timerThatWaits < Time.time)
         {
-            onShopOpen?.Invoke(_shopInventory);
-            _panel.Show();
-        }
-        else
-        {
-            onShopClose?.Invoke(_shopInventory);
-            _panel.Hide();
+            Debug.Log("OpenShop called");
+            if (_panel.IsHidden)
+            {
+                onShopOpen?.Invoke(_shopInventory);
+                _panel.Show();
+                Debug.Log("open shop");
+            }
+            else
+            {
+                onShopClose?.Invoke(_shopInventory);
+                _panel.Hide();
+                Debug.Log("closed shop");
+            }
+            _timerThatWaits = Time.time + _timeToWait;
         }
         
     }
