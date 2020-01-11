@@ -19,7 +19,7 @@ public class ItemInformation : MonoBehaviour
         SetRefrences();
     }
 
-    public void SetData(Mask mask)
+    public void SetData(ItemShopMask mask)
     {
         _maskName.text = mask._name;
         _cost.text = mask._maskCost.ToString();
