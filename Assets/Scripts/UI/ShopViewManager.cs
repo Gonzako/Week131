@@ -68,7 +68,7 @@ public class ShopViewManager : MonoBehaviour
 [System.Serializable]
 public struct ItemShopMask
 {
-    public Mask(string name, int cost)
+    public ItemShopMask(string name, int cost)
     {
         _name = name;
         _maskCost = cost;
