@@ -335,6 +335,8 @@ GameObject:
   - component: {fileID: 3525867435559563084}
   - component: {fileID: 3525867435559563085}
   - component: {fileID: 3525867435559563086}
+  - component: {fileID: 5881253859084951849}
+  - component: {fileID: 8334131288192979070}
   m_Layer: 0
   m_Name: MaskGuy
   m_TagString: Untagged
@@ -429,3 +431,28 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &5881253859084951849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3525867435559563087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a5e113bf594ce640bb1510edc6d8c39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5
+--- !u!114 &8334131288192979070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3525867435559563087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cde0c3f7c8646f4eb980260aa8af553, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
