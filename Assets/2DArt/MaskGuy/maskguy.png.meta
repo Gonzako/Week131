@@ -4,25 +4,34 @@ TextureImporter:
   internalIDToNameTable:
   - first:
       213: 6522590614057450789
-    second: maskguy_yellow_front1
+    second: maskguy_front1
   - first:
       213: 9049806509230152832
-    second: maskguy_yellow_front2
+    second: maskguy_front2
   - first:
       213: -1402678276616212758
-    second: maskguy_yellow_left1
+    second: maskguy_left1
   - first:
       213: 8015170070411216577
-    second: maskguy_yellow_left2
+    second: maskguy_left2
   - first:
       213: -7587994285414271795
-    second: maskguy_yellow_left3
+    second: maskguy_left3
   - first:
       213: 1406893386603247905
-    second: maskguy_yellow_back1
+    second: maskguy_back1
   - first:
       213: -3739803480887402788
-    second: maskguy_yellow_back2
+    second: maskguy_back2
+  - first:
+      213: 6269675505405548013
+    second: mask_yellow_left
+  - first:
+      213: 1624711070866809267
+    second: mask_yellow_front
+  - first:
+      213: -4961266976480404647
+    second: mask_yellow_back
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -155,7 +164,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: maskguy_yellow_front1
+      name: maskguy_front1
       rect:
         serializedVersion: 2
         x: 4
@@ -163,7 +172,7 @@ TextureImporter:
         width: 24
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -176,7 +185,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: maskguy_yellow_front2
+      name: maskguy_front2
       rect:
         serializedVersion: 2
         x: 30
@@ -184,7 +193,7 @@ TextureImporter:
         width: 24
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -197,15 +206,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: maskguy_yellow_left1
+      name: maskguy_left1
       rect:
         serializedVersion: 2
         x: 10
-        y: 60
+        y: 59
         width: 14
-        height: 31
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -218,15 +227,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: maskguy_yellow_left2
+      name: maskguy_left2
       rect:
         serializedVersion: 2
         x: 26
-        y: 60
+        y: 59
         width: 14
-        height: 31
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -239,15 +248,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: maskguy_yellow_left3
+      name: maskguy_left3
       rect:
         serializedVersion: 2
         x: 42
-        y: 60
+        y: 59
         width: 14
-        height: 31
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -260,15 +269,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: maskguy_yellow_back1
+      name: maskguy_back1
       rect:
         serializedVersion: 2
-        x: 5
-        y: 28
+        x: 4
+        y: 22
         width: 24
-        height: 31
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -281,15 +290,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: maskguy_yellow_back2
+      name: maskguy_back2
       rect:
         serializedVersion: 2
-        x: 31
-        y: 28
+        x: 30
+        y: 22
         width: 24
-        height: 31
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -297,6 +306,69 @@ TextureImporter:
       bones: []
       spriteID: 010be31e42b697944bf0ad2f41c09289
       internalID: -3739803480887402788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mask_yellow_left
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 95
+        width: 9
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24ebbf6371c320c46835ab25db798aeb
+      internalID: 6269675505405548013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mask_yellow_front
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 95
+        width: 24
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 021f0a40f166da04b9f5311e04876e6b
+      internalID: 1624711070866809267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mask_yellow_back
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 95
+        width: 24
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd7f72f9703dc2e43bb2afff656d5a3a
+      internalID: -4961266976480404647
       vertices: []
       indices: 
       edges: []
