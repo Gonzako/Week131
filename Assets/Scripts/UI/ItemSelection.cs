@@ -27,21 +27,17 @@ public class ItemSelection : MonoBehaviour
 
     private void Start()
     {
-        items = _listParent.GetComponentsInChildren<ItemInformation>();
-        if (items.Length > 0)
-        {
-            foreach (ItemInformation im in items)
-            {
-                im.onItemChosen += UpdateDescription;
-            }
-        }
+ 
     }
 
     private void OnDisable()
     {
-        foreach (ItemInformation im in items)
+        if (items.Length > 0)
         {
-            im.onItemChosen -= UpdateDescription;
+            foreach (ItemInformation im in items)
+            {
+                im.onItemChosen -= UpdateDescription;
+            }
         }
     }
 

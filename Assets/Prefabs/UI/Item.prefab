@@ -660,7 +660,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  ListenForAllUIButtons: 1
+  ListenForAllUIButtons: 0
   TriggerAction: 3
 --- !u!114 &8188646300275735643
 MonoBehaviour:
@@ -815,7 +815,7 @@ MonoBehaviour:
         Duration: 1
       Scale:
         AnimationType: 4
-        Enabled: 0
+        Enabled: 1
         From: {x: 0, y: 0, z: 0}
         To: {x: 0, y: 0, z: 0}
         By: {x: 0, y: 0, z: 0}

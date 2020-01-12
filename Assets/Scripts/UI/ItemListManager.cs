@@ -42,4 +42,7 @@ public class ItemListManager : MonoBehaviour
             on.GetComponent<ItemInformation>().SetData(m);
         }
     }
+
+
+    
 }
