@@ -12,14 +12,6 @@ using UnityEngine;
 public class maskAnimator : MonoBehaviour
 {
     #region Public Fields
-    [MinMaxSlider(-90, 90)]
-    public MinMax frontAngle;
-    [MinMaxSlider(0, 180)]
-    public MinMax rightAngle;
-    [MinMaxSlider(-180, 0)]
-    public MinMax leftAngle;
-    [MinMaxSlider(90, 270)]
-    public MinMax backAngle;
     #endregion
 
     #region Private Fields
@@ -30,7 +22,16 @@ public class maskAnimator : MonoBehaviour
     bool walking => Mathf.Abs(Input.GetAxisRaw("Horizontal")) + Mathf.Abs(Input.GetAxisRaw("Vertical")) > 0;
     Sides side = new Sides();
     private Camera cam;
+    Vector2 mouseVector;
     private const string walkingVariable = "Walking";
+    private const string moveX = "moveX";
+    private const string moveY = "moveY";
+
+    
+    #region GarbageSavers
+    Vector3 mouseDirVector;
+    float mouseAngle;
+    #endregion
     #endregion
 
     #region Public Methods
@@ -49,52 +50,37 @@ public class maskAnimator : MonoBehaviour
     private void updateAnimator()
     {
         AM.SetBool(walkingVariable, walking);
-        float angle = getAngleTowardsMouse();
-        for (int i = 0; i < 4; i++)
-        {
-           if (i == (int)Sides.Down)
-              
-           {
-               if(angle > frontAngle.Min && angle < frontAngle.Max)
-               {
-                    AM.SetBool(((Sides)i).ToString(), true);
-                    break;
-               }
-           }
-           else if( i == (int)Sides.Left)
-           {
-                if (angle > leftAngle.Min && angle < leftAngle.Max)
-                {
-                    AM.SetBool(((Sides)i).ToString(), true);
-                    break;
-                }
-            }
-           else if(i == (int)Sides.Right)
-           {
-                if (angle > rightAngle.Min && angle < rightAngle.Max)
-                {
-                    AM.SetBool(((Sides)i).ToString(), true);
-                    break;
-                }
-            }
-           else if (i == (int)Sides.Up)
-           {
-                if (angle > backAngle.Min && angle < backAngle.Max)
-                {
-                    AM.SetBool(((Sides)i).ToString(), true);
-                    break;
-                }
-           }
+        mouseVector = DegreeToVector2(getAngleTowardsMouse());
 
+        mouseVector = Vector2Int.RoundToInt(mouseVector);
+        if(mouseVector.magnitude > 1 ) { mouseVector.y = 0; }
+        else { mouseVector.x = 0; }
+
+        Debug.Log(mouseVector);
+        if(mouseVector != Vector2.zero)
+        {
+            AM.SetFloat(moveX, mouseVector.x);
+            AM.SetFloat(moveY, mouseVector.y);
         }
 
     }
 
     private float getAngleTowardsMouse()
     {
+        mouseDirVector = Input.mousePosition - cam.WorldToScreenPoint(transform.position);
+        return Mathf.Atan2(mouseDirVector.y, mouseDirVector.x) * Mathf.Rad2Deg;
 
+    }
 
-        return 0;
+    //might move this into a extension one
+    public  Vector2 RadianToVector2(float radian)
+    {
+        return new Vector2(Mathf.Cos(radian), Mathf.Sin(radian));
+    }
+
+    public  Vector2 DegreeToVector2(float degree)
+    {
+        return RadianToVector2(degree * Mathf.Deg2Rad);
     }
     #endregion
 

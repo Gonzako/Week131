@@ -324,17 +324,17 @@ PrefabInstance:
     - target: {fileID: 3525867435559563084, guid: 3a52e147c47289b459194d44e343d1bb,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3525867435559563084, guid: 3a52e147c47289b459194d44e343d1bb,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.9848078
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3525867435559563084, guid: 3a52e147c47289b459194d44e343d1bb,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.17364809
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3525867435559563084, guid: 3a52e147c47289b459194d44e343d1bb,
         type: 3}
@@ -354,52 +354,12 @@ PrefabInstance:
     - target: {fileID: 3525867435559563084, guid: 3a52e147c47289b459194d44e343d1bb,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 200
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3525867435559563087, guid: 3a52e147c47289b459194d44e343d1bb,
         type: 3}
       propertyPath: m_Name
       value: MaskGuy
-      objectReference: {fileID: 0}
-    - target: {fileID: 8334131288192979070, guid: 3a52e147c47289b459194d44e343d1bb,
-        type: 3}
-      propertyPath: frontAngle.min
-      value: -60
-      objectReference: {fileID: 0}
-    - target: {fileID: 8334131288192979070, guid: 3a52e147c47289b459194d44e343d1bb,
-        type: 3}
-      propertyPath: frontAngle.max
-      value: 60
-      objectReference: {fileID: 0}
-    - target: {fileID: 8334131288192979070, guid: 3a52e147c47289b459194d44e343d1bb,
-        type: 3}
-      propertyPath: rightAngle.max
-      value: 160
-      objectReference: {fileID: 0}
-    - target: {fileID: 8334131288192979070, guid: 3a52e147c47289b459194d44e343d1bb,
-        type: 3}
-      propertyPath: rightAngle.min
-      value: 60
-      objectReference: {fileID: 0}
-    - target: {fileID: 8334131288192979070, guid: 3a52e147c47289b459194d44e343d1bb,
-        type: 3}
-      propertyPath: leftAngle.min
-      value: -160
-      objectReference: {fileID: 0}
-    - target: {fileID: 8334131288192979070, guid: 3a52e147c47289b459194d44e343d1bb,
-        type: 3}
-      propertyPath: leftAngle.max
-      value: -60
-      objectReference: {fileID: 0}
-    - target: {fileID: 8334131288192979070, guid: 3a52e147c47289b459194d44e343d1bb,
-        type: 3}
-      propertyPath: backAngle.max
-      value: 200
-      objectReference: {fileID: 0}
-    - target: {fileID: 8334131288192979070, guid: 3a52e147c47289b459194d44e343d1bb,
-        type: 3}
-      propertyPath: backAngle.min
-      value: 160
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a52e147c47289b459194d44e343d1bb, type: 3}
