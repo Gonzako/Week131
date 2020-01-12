@@ -17,7 +17,7 @@ namespace GonzakoUtils.DataStructures
         /// Base object used for the pooling
         /// </summary>
         public T Blueprint { get; set;}
-
+        public Transform parent { get; set; }
         /// <summary>
         /// Return the number of items on the pool
         /// </summary>
@@ -114,8 +114,9 @@ namespace GonzakoUtils.DataStructures
             return Populate(Blueprint, count);
         }
 
-        private bool Populate(T blueprint, int count)
+        private bool Populate(T blueprint, int count, Transform parent = null)
         {
+            parent = this.parent;
             T startObj = CreateObject(blueprint);
 
             if (startObj == null) { throw new Exception(); }
@@ -134,8 +135,7 @@ namespace GonzakoUtils.DataStructures
 
         private T CreateObject( T blueprint)
         {
-
-            return Object.Instantiate(blueprint as Object) as T;
+            return Object.Instantiate(blueprint as Object, parent) as T;
 
         }
 
