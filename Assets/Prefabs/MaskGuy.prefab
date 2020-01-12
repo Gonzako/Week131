@@ -337,6 +337,7 @@ GameObject:
   - component: {fileID: 3525867435559563086}
   - component: {fileID: 5881253859084951849}
   - component: {fileID: 8334131288192979070}
+  - component: {fileID: 1641876355}
   m_Layer: 0
   m_Name: MaskGuy
   m_TagString: Untagged
@@ -472,3 +473,24 @@ MonoBehaviour:
   rightMask: {fileID: 3525867433753320302}
   backMask: {fileID: 3525867435559462368}
   frontMask: {fileID: 3525867433839653220}
+--- !u!50 &1641876355
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3525867435559563087}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
