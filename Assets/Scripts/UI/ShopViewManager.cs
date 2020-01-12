@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Doozy;
 using Doozy.Engine.UI;
+using UnityEngine.UI;
 
 public class ShopViewManager : MonoBehaviour
 {
@@ -14,7 +15,7 @@ public class ShopViewManager : MonoBehaviour
 
     public delegate void ShopEvents(List<ItemShopMask> inventory);
     public ShopEvents onShoppingDone;
-    public ShopEvents onShopOpen;
+    public static ShopEvents onShopOpen;
     public ShopEvents onShopClose;
 
     private const float _timeToWait = 2f;
@@ -34,7 +35,7 @@ public class ShopViewManager : MonoBehaviour
     private void OnDisable()
     {
         _gameStateManager.onStateChanged -= ShopHandle;
-        ShopOpener.onAnyOpenCommand -= OpenShop;        ShopOpener.onAnyOpenCommand -= OpenShop;        ShopOpener.onAnyOpenCommand -= OpenShop;        ShopOpener.onAnyOpenCommand -= OpenShop;        ShopOpener.onAnyOpenCommand -= OpenShop;        ShopOpener.onAnyOpenCommand -= OpenShop;
+        ShopOpener.onAnyOpenCommand -= OpenShop;        
     }
 
 
@@ -58,14 +59,15 @@ public class ShopViewManager : MonoBehaviour
             Debug.Log("OpenShop called");
             if (_panel.IsHidden)
             {
-                onShopOpen?.Invoke(_shopInventory);
                 _panel.Show();
+                onShopOpen?.Invoke(_shopInventory);
                 Debug.Log("open shop");
             }
             else
             {
-                onShopClose?.Invoke(_shopInventory);
                 _panel.Hide();
+                onShopClose?.Invoke(_shopInventory);
+              
                 Debug.Log("closed shop");
             }
             _timerThatWaits = Time.time + _timeToWait;
@@ -77,11 +79,16 @@ public class ShopViewManager : MonoBehaviour
 [System.Serializable]
 public struct ItemShopMask
 {
-    public ItemShopMask(string name, int cost)
+    public ItemShopMask(string name, int cost, string desc, Image img)
     {
         _name = name;
         _maskCost = cost;
+        _description = desc;
+        _spriteImage = img;
     }
+
     public string _name;
     public int _maskCost;
+    public string _description;
+    public Image _spriteImage;
 }

@@ -11,7 +11,7 @@ public class ShopOpener : MonoBehaviour
 
     private void Awake()
     {
-        onAnyOpenCommand = null;
+        //onAnyOpenCommand = null;
     }
 
     private void Start()

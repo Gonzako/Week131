@@ -4,49 +4,53 @@ using UnityEngine;
 
 public class ShopItemPooler : MonoBehaviour
 {
-    [SerializeField] int _amount;
-    [SerializeField] GameObject _poolableItem;
+    [SerializeField]
+    private float amount;
+    [SerializeField]
+    private GameObject _gmob;
+    private List<GameObject> pooledProjectiles;
 
-    public List<GameObject> _pooledObjects;
-
-    private Transform _transform;
-
-    public static ShopItemPooler _instance;
-    // Start is called before the first frame update
+    public static ShopItemPooler _pooler;
 
     private void Awake()
     {
-        if (_instance != this)
-        {
-            _instance = this;
-        }
-    }
 
+        _pooler = this;
+        pooledProjectiles = new List<GameObject>();
+        setupObjects();
+
+    }
+    // Start is called before the first frame update
     void Start()
     {
-        _transform = GetComponent<Transform>();
-        _pooledObjects = new List<GameObject>();
-        InstantiateObjectsIn();
+      
     }
 
-    private void InstantiateObjectsIn()
+    /// <summary>
+    /// Setup projectile objects:
+    /// </summary
+    void setupObjects()
     {
-        for(int i = 0; i < _amount; i++)
+        for (int x = 0; x < amount; x++)
         {
-            GameObject inst = Instantiate(_poolableItem);
-            inst.transform.SetParent(_transform);
-            _pooledObjects.Add(inst);
-            inst.SetActive(false);
+            GameObject _instob = Instantiate(_gmob);
+            _instob.transform.SetParent(transform);
+            pooledProjectiles.Add(_instob);
+            _instob.SetActive(false);
         }
     }
 
-    public GameObject GetPooledObject()
+    /// <summary>
+    /// returns a instance of pooled projectile object
+    /// </summary>
+    public GameObject getpooledObject()
     {
-        foreach(GameObject ob in _pooledObjects)
+        foreach (GameObject projectileInstance in pooledProjectiles)
         {
-            if (!ob.activeSelf)
+            if (!projectileInstance.activeInHierarchy)
             {
-                return ob;
+                projectileInstance.SetActive(true);
+                return projectileInstance;
             }
         }
         return null;
