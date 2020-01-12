@@ -9,15 +9,10 @@ public class ItemListManager : MonoBehaviour
     //Pool<GameObject> _itemPool;
     ShopViewManager _shopmanager;
     Transform _trans;
-
-    public delegate void ItemListEvents();
     
 
-    private void Start()
-    {
-        //_itemPool = new Pool<GameObject>(5, _defaultItemData);
-        //_trans = GetComponent<Transform>();
-    }
+    public delegate void ItemListEvents();
+    public static ItemListEvents onAllItemsLoaded;
     private void OnEnable()
     {
         _trans = GetComponent<Transform>();
@@ -39,7 +34,9 @@ public class ItemListManager : MonoBehaviour
             Debug.Log(on.name);
             on.transform.SetParent(_trans);
             on.transform.localScale = new Vector3(1F, 1F, 1F);
+            on.SetActive(true);
             on.GetComponent<ItemInformation>().SetData(m);
         }
+        onAllItemsLoaded?.Invoke();
     }
 }
