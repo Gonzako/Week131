@@ -10,10 +10,12 @@ public class ItemInformation : MonoBehaviour
     private Text _maskName;
     private Text _cost;
     private Image _maskSprite;
+    private Image _thisImage;
+  
 
     private ItemShopMask _data;
 
-    public delegate void UI_ITEM_EVENTS(ItemShopMask mask);
+    public delegate void UI_ITEM_EVENTS(ItemShopMask mask, GameObject ob);
     public UI_ITEM_EVENTS onItemChosen;
 
     private void OnEnable()
@@ -31,6 +33,7 @@ public class ItemInformation : MonoBehaviour
         _maskName.text = mask._name;
         _cost.text = mask._maskCost.ToString();
         _data = mask;
+        _thisImage = GetComponent<Image>();
     }
 
     private void SetRefrences()
@@ -55,7 +58,9 @@ public class ItemInformation : MonoBehaviour
   
     public void Test()
     {
-        onItemChosen?.Invoke(_data);
+       this.onItemChosen?.Invoke(_data, this.gameObject);
+       // _thisImage.color = Color.red;
+
     }
 
    

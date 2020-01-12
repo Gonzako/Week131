@@ -49,7 +49,7 @@ public class ShopItemPooler : MonoBehaviour
         {
             if (!projectileInstance.activeInHierarchy)
             {
-                projectileInstance.SetActive(true);
+                //projectileInstance.SetActive(true);
                 return projectileInstance;
             }
         }
