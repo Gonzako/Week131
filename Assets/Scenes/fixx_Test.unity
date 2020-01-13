@@ -294,12 +294,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!198 &2088332540 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 4697123643971199172, guid: 9cad5c2cf3e345643b83d4dce8dbdebe,
-    type: 3}
-  m_PrefabInstance: {fileID: 4697123643090832440}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4697123643090832440
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -307,15 +301,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4697123643038975111, guid: 9cad5c2cf3e345643b83d4dce8dbdebe,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4697123643971199172, guid: 9cad5c2cf3e345643b83d4dce8dbdebe,
         type: 3}
-      propertyPath: playOnAwake
-      value: 0
+      propertyPath: InitialModule.startColor.maxColor.a
+      value: 0.20784314
       objectReference: {fileID: 0}
     - target: {fileID: 4697123644209940686, guid: 9cad5c2cf3e345643b83d4dce8dbdebe,
         type: 3}
@@ -377,10 +366,5 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8197093180605754317, guid: 9cad5c2cf3e345643b83d4dce8dbdebe,
-        type: 3}
-      propertyPath: startMovePuff
-      value: 
-      objectReference: {fileID: 2088332540}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9cad5c2cf3e345643b83d4dce8dbdebe, type: 3}
