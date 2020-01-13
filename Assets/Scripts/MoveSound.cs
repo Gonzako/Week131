@@ -3,9 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class MoveSound : MonoBehaviour
-{
-
-    public ParticleSystem startMovePuff;
+{ 
     movementAnimator movAnim;
 
     private void handleMoveStart(Vector2 direction)
