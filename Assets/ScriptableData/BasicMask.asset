@@ -18,5 +18,6 @@ MonoBehaviour:
     type: 3}
   sideMask: {fileID: 6269675505405548013, guid: 8a39e0c1ea8a2bf4aad52eb7e4520da2,
     type: 3}
-  bulletToSpawn: {fileID: 0}
+  bulletToSpawn: {fileID: 6507044490477135048, guid: 7834a751472854a4e818e79ddc7664c5,
+    type: 3}
   coolDownTime: 0.2
