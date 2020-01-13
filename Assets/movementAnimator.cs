@@ -12,6 +12,7 @@ public class movementAnimator : MonoBehaviour
 {
     #region Public Fields
     public event Action<Vector2> onMovementStart;
+    public event Action<GameObject> onMovementEnd;
     #endregion
 
     #region Private Fields
@@ -35,10 +36,15 @@ public class movementAnimator : MonoBehaviour
  
     void Update()
     {
-        if(walking && previousWalking)
+        if(walking && !previousWalking)
         {
             onMovementStart?.Invoke(new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")));
         }
+        if(!walking && previousWalking)
+        {
+            onMovementEnd?.Invoke(this.gameObject);
+        }
+        previousWalking = walking;
     }
 
     #endregion
