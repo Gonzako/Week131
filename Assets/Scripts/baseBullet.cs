@@ -10,6 +10,7 @@ using UnityEngine;
 public class baseBullet : MonoBehaviour
 {
     #region Public Fields
+
     #endregion
  
     #region Private Fields
@@ -22,7 +23,7 @@ public class baseBullet : MonoBehaviour
     #endregion
 
 
-    #if false
+    #if true
     #region Unity API
 
     void Start()
