@@ -1,18 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &8197093180605754317
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4697123643038975108}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b5de8c204cf0c2f4481853b058942c92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startMovePuff: {fileID: 4697123643971199172}
 --- !u!198 &1560772692
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -4741,6 +4728,32 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!114 &8197093180605754317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4697123643038975108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5de8c204cf0c2f4481853b058942c92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startMovePuff: {fileID: 4697123643971199172}
+--- !u!114 &688648074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4697123643038975108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2d6a41d3bd6227418579c305f251674, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startMovePuff: {fileID: 0}
 --- !u!1 &4697123643971199170
 GameObject:
   m_ObjectHideFlags: 0

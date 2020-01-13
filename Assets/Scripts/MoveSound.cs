@@ -4,15 +4,31 @@ using UnityEngine;
 
 public class MoveSound : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+
+    public ParticleSystem startMovePuff;
+    movementAnimator movAnim;
+
+    private void handleMoveStart(Vector2 direction)
     {
-        
+        Debug.Log("POOP");
     }
 
-    // Update is called once per frame
-    void Update()
+
+    void Start()
     {
-        
+    }
+
+    private void OnEnable()
+    {
+        movAnim = GetComponent<movementAnimator>();
+        movAnim.onMovementStart += handleMoveStart;
+    }
+
+    private void OnDisable()
+    {
+        movAnim.onMovementStart -= handleMoveStart;
+    }
+    void FixedUpdate()
+    {
     }
 }
