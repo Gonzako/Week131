@@ -24,8 +24,10 @@ public class BasicScriptableMask : ScriptableObject
     {
         if (cooldownTimer < Time.time)
         {
-            Instantiate(bulletToSpawn, position, Quaternion.AngleAxis(rotation, Vector3.forward));
+            baseBullet on = Instantiate(bulletToSpawn, position, Quaternion.AngleAxis(rotation, Vector3.forward));
+            on.GetComponent<Rigidbody2D>().AddForce(position * 5F, ForceMode2D.Impulse);
             cooldownTimer = Time.time + coolDownTime;
+
             Debug.Log("Fired gun");
         }
         else
