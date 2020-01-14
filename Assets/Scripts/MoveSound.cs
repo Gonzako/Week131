@@ -17,6 +17,11 @@ public class MoveSound : MonoBehaviour
     public int[] index;
     private int currentIndex = 0;
 
+    //timer variables
+    [SerializeField]
+    private float coolDownTime = 0.2f;
+    private float cooldownTimer = 0;
+
     private void handleMoveStart(Vector2 direction)
     {
         audioSource.pitch = Random.Range(0.9f, 1.1f); 
@@ -84,6 +89,13 @@ public class MoveSound : MonoBehaviour
     }
     void FixedUpdate()
     {
-
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            if (cooldownTimer<Time.time)
+            {
+                playRun();
+                cooldownTimer = coolDownTime + Time.time;
+            }
+        }
     }
 }
