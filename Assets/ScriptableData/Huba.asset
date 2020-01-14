@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae74076d6d64e774bba10d8278738fd8, type: 3}
+  m_Name: Huba
+  m_EditorClassIdentifier: 
+  frontMask: {fileID: 1624711070866809267, guid: 8a39e0c1ea8a2bf4aad52eb7e4520da2,
+    type: 3}
+  backMask: {fileID: -4961266976480404647, guid: 8a39e0c1ea8a2bf4aad52eb7e4520da2,
+    type: 3}
+  sideMask: {fileID: 6269675505405548013, guid: 8a39e0c1ea8a2bf4aad52eb7e4520da2,
+    type: 3}
+  bulletToSpawn: {fileID: 6507044490477135048, guid: 7834a751472854a4e818e79ddc7664c5,
+    type: 3}
+  coolDownTime: 0.2

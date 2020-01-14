@@ -4773,7 +4773,7 @@ MonoBehaviour:
     _description: Like it's name says this mask fires into all directions.
     _spriteImage: {fileID: 1624711070866809267, guid: 8a39e0c1ea8a2bf4aad52eb7e4520da2,
       type: 3}
-    _power: {fileID: 11400000, guid: f624af698be4f0948b73ec44391e3c48, type: 2}
+    _power: {fileID: 11400000, guid: 969f195683f7a5e458da5e14d7627074, type: 2}
   _panel: {fileID: 855759068}
 --- !u!114 &63881558
 MonoBehaviour:
@@ -7197,6 +7197,33 @@ MonoBehaviour:
   _sprite: {fileID: 0}
   _listParent: {fileID: 735572317}
   items: []
+--- !u!1 &2117566888 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3264387112172266538, guid: 6d706e1c0f311624a82851de9cb2b2b8,
+    type: 3}
+  m_PrefabInstance: {fileID: 3264387110442883117}
+  m_PrefabAsset: {fileID: 0}
+--- !u!50 &2117566895
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2117566888}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 1
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!114 &173710267397353994
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7294,6 +7321,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3264387112172266531, guid: 6d706e1c0f311624a82851de9cb2b2b8,
+        type: 3}
+      propertyPath: _player
+      value: 
+      objectReference: {fileID: 4697123642673040696}
+    - target: {fileID: 3264387112172266535, guid: 6d706e1c0f311624a82851de9cb2b2b8,
+        type: 3}
+      propertyPath: repathRate
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 3264387112172266538, guid: 6d706e1c0f311624a82851de9cb2b2b8,
         type: 3}
       propertyPath: m_Name
@@ -7304,7 +7341,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3264387112172266535, guid: 6d706e1c0f311624a82851de9cb2b2b8, type: 3}
+    - {fileID: 3264387112172266532, guid: 6d706e1c0f311624a82851de9cb2b2b8, type: 3}
+    - {fileID: 3264387112172266534, guid: 6d706e1c0f311624a82851de9cb2b2b8, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 6d706e1c0f311624a82851de9cb2b2b8, type: 3}
 --- !u!212 &4697123642672875410
 SpriteRenderer:

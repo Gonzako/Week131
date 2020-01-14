@@ -8,7 +8,12 @@ public class AIManager : MonoBehaviour
 {
     private Dictionary<Type, BaseAIState> _initialStates;
     private AIStateManager _aistatemng;
-    public AIDestinationSetter _trgmngr;
+    public Seeker _agent;
+    public AILerp _lerp;
+    public AIDestinationSetter _setter;
+    public Rigidbody2D _rb;
+
+    [SerializeField] public Transform _player;
 
     
 
@@ -20,7 +25,10 @@ public class AIManager : MonoBehaviour
     private void Start()
     {
         SetupStates();
-        _trgmngr = GetComponent<AIDestinationSetter>();
+        _agent = GetComponent<Seeker>();
+        _lerp = GetComponent<AILerp>();
+        _setter = GetComponent<AIDestinationSetter>();
+        _rb = GetComponent<Rigidbody2D>();
     }
 
     private void SetupStates()
