@@ -23,10 +23,18 @@ public class BasicScriptableMask : ScriptableObject
 
     public void Fire(Transform position, float rotation)
     {
-        baseBullet on = Instantiate(bulletToSpawn, position.position, Quaternion.AngleAxis(rotation, Vector3.forward));
-        on.ShootForward();
+        if (cooldownTimer < Time.time)
+        {
+            baseBullet on = Instantiate(bulletToSpawn, position.position, Quaternion.AngleAxis(rotation, Vector3.forward));
+            on.ShootForward();
 
-        cooldownTimer = coolDownTime;
-        Debug.Log("Fired gun");
+            cooldownTimer = coolDownTime;
+            Debug.Log("Fired gun");
+            cooldownTimer = Time.time + coolDownTime;
+        }
+        else
+        {
+            Debug.Log("Gun on cooldown");
+        }
     }
 }
