@@ -6005,7 +6005,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: e24f8c9f5129d8444bc9280c0198999e, type: 3}
   setShuffle: 8
   index: 
-  coolDownTime: 0.02
+  coolDownTime: 0.15
 --- !u!82 &688648067
 AudioSource:
   m_ObjectHideFlags: 0

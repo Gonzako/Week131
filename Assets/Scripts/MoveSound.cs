@@ -19,7 +19,7 @@ public class MoveSound : MonoBehaviour
 
     //timer variables
     [SerializeField]
-    private float coolDownTime = 0.2f;
+    private float coolDownTime;
     private float cooldownTimer = 0;
 
     private void handleMoveStart(Vector2 direction)
