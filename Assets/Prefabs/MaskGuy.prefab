@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3525867433753320301}
   - component: {fileID: 3525867433753320300}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: mask_right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91,7 +91,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3525867433839653227}
   - component: {fileID: 3525867433839653226}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: mask_front
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -172,7 +172,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3525867435350448537}
   - component: {fileID: 3525867435350448536}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: mask_left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -253,7 +253,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3525867435559462375}
   - component: {fileID: 3525867435559462374}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: mask_back
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -346,7 +346,7 @@ GameObject:
   - component: {fileID: 688648064}
   - component: {fileID: 8197093180605754317}
   - component: {fileID: 2507369320046035998}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: MaskGuy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5495,7 +5495,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3234643423408674127}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: FiringPosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -6,6 +6,7 @@
  */
 
 using UnityEngine;
+using GonzakoUtils.DataStructures;
 
 [CreateAssetMenu(menuName = "Gameplay/SimpleMask")]
 public class BasicScriptableMask : ScriptableObject
@@ -19,9 +20,10 @@ public class BasicScriptableMask : ScriptableObject
     [SerializeField]
     private float coolDownTime = 0.2f;
 
+    
     private float cooldownTimer = -1;
 
-    public void Fire(Transform position, float rotation)
+    public GameObject Fire(Transform position, float rotation)
     {
         if (cooldownTimer < Time.time)
         {
@@ -31,10 +33,23 @@ public class BasicScriptableMask : ScriptableObject
             cooldownTimer = coolDownTime;
             Debug.Log("Fired gun");
             cooldownTimer = Time.time + coolDownTime;
+            return on.gameObject;
         }
         else
         {
+
             Debug.Log("Gun on cooldown");
+            return null;
         }
+    }
+
+    public void prepareData()
+    {
+
+    }
+
+    public void disposeData()
+    {
+
     }
 }

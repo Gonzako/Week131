@@ -13,15 +13,17 @@ public class gunManager : MonoBehaviour
     #region Public Fields
     [SerializeField]
     private BasicScriptableMask mask;
-    public BasicScriptableMask Mask { get { return mask; } set { mask = value; onMaskChange.Invoke(value, this.gameObject); } }
+    public BasicScriptableMask Mask { get { return mask; } set {mask.disposeData(); mask = value; mask.prepareData(); onMaskChange.Invoke(value, this.gameObject); } }
 
     public static event Action<BasicScriptableMask, GameObject> onMaskChange;
+    public static event Action<BasicScriptableMask, GameObject> onFire;
     public Transform firingPosition;
 
 
     #endregion
 
     #region Private Fields
+    private GameObject latestBullet;
     private Camera _cam;
     private Vector2 mouseDirVector;
     #endregion
@@ -45,6 +47,7 @@ public class gunManager : MonoBehaviour
     void Start()
     {
         _cam = Camera.main;
+        mask.prepareData();
     }
  
     void FixedUpdate()
