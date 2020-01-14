@@ -127,6 +127,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 688648076, guid: 9cad5c2cf3e345643b83d4dce8dbdebe, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 3112277378987771382, guid: bc155dfdccec1be4780029a8bd542de5,
+        type: 2}
     - target: {fileID: 4697123644209940686, guid: 9cad5c2cf3e345643b83d4dce8dbdebe,
         type: 3}
       propertyPath: m_Name
@@ -5972,24 +5977,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!1 &688648063 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4697123643038975108, guid: 9cad5c2cf3e345643b83d4dce8dbdebe,
-    type: 3}
-  m_PrefabInstance: {fileID: 399647019}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &688648064
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 688648063}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2d6a41d3bd6227418579c305f251674, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1408059226
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5997,6 +5984,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1322519569, guid: 2bf8fc049e3618e4695bc83e838fef7f, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 243120066433540876, guid: bc155dfdccec1be4780029a8bd542de5,
+        type: 2}
     - target: {fileID: 2306622158236598157, guid: 2bf8fc049e3618e4695bc83e838fef7f,
         type: 3}
       propertyPath: m_LocalPosition.x

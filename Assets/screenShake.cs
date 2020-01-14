@@ -31,7 +31,7 @@ public class screenShake : MonoBehaviour
         fovKickSequence = DOTween.Sequence();
         kickUpTween = DOTween.To(() => cam.orthographicSize, x => cam.orthographicSize = x, cam.orthographicSize + kickStrengh, kickTime).SetEase(kickUpEase);
         fovKickSequence.Append(kickUpTween)
-            .Append(fallbackTween = DOTween.To(() => cam.orthographicSize, x => cam.orthographicSize = x, defSize, kickTime).SetEase(fallbackEase));
+            .Append(fallbackTween = DOTween.To(() => cam.orthographicSize, x => cam.orthographicSize = x, defSize, fallbackDuration).SetEase(fallbackEase));
         
     }
     #endregion
@@ -57,6 +57,7 @@ public class screenShake : MonoBehaviour
     {
         if(GUI.Button(new Rect(10, 10, 150, 100), "fovKickTest"))
         {
+            //playsound
             fovKick(kickStrengh, kickTime, fallbackDur);
         }
     }
