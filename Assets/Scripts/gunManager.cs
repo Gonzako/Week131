@@ -53,9 +53,9 @@ public class gunManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetButton("Fire1"))
         {
-            Mask.Fire(transform, getAngleTowardsMouse() + 180);
+            Mask.Fire(transform, getAngleTowardsMouse());
         }
     }
 
