@@ -19,7 +19,7 @@ public class BasicScriptableMask : ScriptableObject
     [SerializeField]
     private float coolDownTime = 0.2f;
 
-    private float cooldownTimer = 0;
+    private float cooldownTimer = -1;
 
     public void Fire(Transform position, float rotation)
     {

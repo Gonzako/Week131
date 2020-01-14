@@ -6045,6 +6045,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1322519567, guid: 2bf8fc049e3618e4695bc83e838fef7f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2306622158236598157, guid: 2bf8fc049e3618e4695bc83e838fef7f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6107,6 +6111,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2bf8fc049e3618e4695bc83e838fef7f, type: 3}
+--- !u!4 &2085673515 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6710979029955755652, guid: 9cad5c2cf3e345643b83d4dce8dbdebe,
+    type: 3}
+  m_PrefabInstance: {fileID: 4697123643090832440}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4697123643090832440
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6114,10 +6124,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1560772692, guid: 9cad5c2cf3e345643b83d4dce8dbdebe, type: 3}
-      propertyPath: EmissionModule.rateOverDistance.scalar
-      value: 5
-      objectReference: {fileID: 0}
+    - target: {fileID: 1743710039, guid: 9cad5c2cf3e345643b83d4dce8dbdebe, type: 3}
+      propertyPath: firingPosition
+      value: 
+      objectReference: {fileID: 2085673515}
+    - target: {fileID: 1743710039, guid: 9cad5c2cf3e345643b83d4dce8dbdebe, type: 3}
+      propertyPath: mask
+      value: 
+      objectReference: {fileID: 11400000, guid: f624af698be4f0948b73ec44391e3c48,
+        type: 2}
     - target: {fileID: 4697123644209940686, guid: 9cad5c2cf3e345643b83d4dce8dbdebe,
         type: 3}
       propertyPath: m_Name
