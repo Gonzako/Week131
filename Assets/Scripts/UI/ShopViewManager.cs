@@ -17,19 +17,25 @@ public class ShopViewManager : MonoBehaviour
     public ShopEvents onShoppingDone;
     public static ShopEvents onShopOpen;
     public ShopEvents onShopClose;
+    public static ShopEvents onShopUpdate;
 
     private const float _timeToWait = 2f;
     private float _timerThatWaits = 0;
+    private gunManager _gun;
 
     [SerializeField] private List<ItemShopMask> _shopInventory;
     [SerializeField] private UIView _panel;
 
     private void OnEnable()
     {
+        _gun = FindObjectOfType<gunManager>();
         _gameStateManager = FindObjectOfType<GameStateManager>();
+
         ShopOpener.onAnyOpenCommand += OpenShop;
         _gameStateManager.onStateChanged += ShopHandle;
-        //ShopOpener.onAnyOpenCommand += OpenShop;
+
+        ItemInformation.onItemBuy += Transaction;
+        ShopOpener.onAnyOpenCommand += OpenShop;
     }
 
     private void OnDisable()
@@ -47,9 +53,11 @@ public class ShopViewManager : MonoBehaviour
         }
     }
 
-    public void Buy(ItemShopMask mask)
+    public void Transaction(ItemShopMask mask, GameObject ob)
     {
-        onMaskBought?.Invoke(mask);
+        _gun.Mask = mask._power;
+        _shopInventory.Remove(mask);
+        onShopUpdate?.Invoke(_shopInventory);
     }
 
     public void OpenShop()
@@ -79,16 +87,18 @@ public class ShopViewManager : MonoBehaviour
 [System.Serializable]
 public struct ItemShopMask
 {
-    public ItemShopMask(string name, int cost, string desc, Image img)
+    public ItemShopMask(string name, int cost, string desc, Sprite img, BasicScriptableMask power)
     {
         _name = name;
         _maskCost = cost;
         _description = desc;
         _spriteImage = img;
+        _power = power;
     }
 
     public string _name;
     public int _maskCost;
     public string _description;
-    public Image _spriteImage;
+    public Sprite _spriteImage;
+    public BasicScriptableMask _power;
 }

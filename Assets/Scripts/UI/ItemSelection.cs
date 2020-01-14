@@ -8,7 +8,7 @@ public class ItemSelection : MonoBehaviour
     [SerializeField] private Text _name;
     [SerializeField] private Text _cost;
     [SerializeField] private Text _description;
-    [SerializeField] private Image _sprite;
+    [SerializeField] private Sprite _sprite;
 
     [SerializeField] private GameObject _listParent;
     [SerializeField] ItemInformation[] items;

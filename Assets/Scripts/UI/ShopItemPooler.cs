@@ -7,23 +7,21 @@ public class ShopItemPooler : MonoBehaviour
     [SerializeField]
     private float amount;
     [SerializeField]
-    private GameObject _gmob;
-    private List<GameObject> pooledProjectiles;
+    private baseBullet _gmob;
+    private List<baseBullet> pooledProjectiles;
 
     public static ShopItemPooler _pooler;
 
-    private void Awake()
-    {
-
-        _pooler = this;
-        pooledProjectiles = new List<GameObject>();
-        setupObjects();
-
-    }
+ 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-      
+        _pooler = this;
+    }
+
+    private void Start()
+    {
+        setupObjects();
     }
 
     /// <summary>
@@ -33,21 +31,20 @@ public class ShopItemPooler : MonoBehaviour
     {
         for (int x = 0; x < amount; x++)
         {
-            GameObject _instob = Instantiate(_gmob);
-            _instob.transform.SetParent(transform);
+            baseBullet _instob = Instantiate(_gmob);
             pooledProjectiles.Add(_instob);
-            _instob.SetActive(false);
+            _instob.gameObject.SetActive(false);
         }
     }
 
     /// <summary>
     /// returns a instance of pooled projectile object
     /// </summary>
-    public GameObject getpooledObject()
+    public baseBullet getpooledObject()
     {
-        foreach (GameObject projectileInstance in pooledProjectiles)
+        foreach (baseBullet projectileInstance in pooledProjectiles)
         {
-            if (!projectileInstance.activeInHierarchy)
+            if (!projectileInstance.gameObject.activeInHierarchy)
             {
                 //projectileInstance.SetActive(true);
                 return projectileInstance;

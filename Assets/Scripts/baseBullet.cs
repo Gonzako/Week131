@@ -17,6 +17,10 @@ public class baseBullet : MonoBehaviour
     #endregion
 
     #region Public Methods
+    public void ShootForward()
+    {
+        GetComponent<Rigidbody2D>().AddForce(-transform.right * 5F, ForceMode2D.Impulse);
+    }
     #endregion
 
     #region Private Methods

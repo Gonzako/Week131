@@ -4,36 +4,29 @@
  * Gonzako123@gmail.com
  *
  */
- 
+
 using UnityEngine;
- 
 
 [CreateAssetMenu(menuName = "Gameplay/SimpleMask")]
 public class BasicScriptableMask : ScriptableObject
 {
     [SerializeField]
     public Sprite frontMask, backMask, sideMask; //TODO: might want to look into making an editor script for these
+
     [SerializeField]
     public baseBullet bulletToSpawn;
 
     [SerializeField]
     private float coolDownTime = 0.2f;
+
     private float cooldownTimer = 0;
 
-    public void Fire(Vector3 position, float rotation)
+    public void Fire(Transform position, float rotation)
     {
-        if (cooldownTimer < Time.time)
-        {
-            baseBullet on = Instantiate(bulletToSpawn, position, Quaternion.AngleAxis(rotation, Vector3.forward));
-            on.GetComponent<Rigidbody2D>().AddForce(position * 5F, ForceMode2D.Impulse);
-            cooldownTimer = Time.time + coolDownTime;
+        baseBullet on = Instantiate(bulletToSpawn, position.position, Quaternion.AngleAxis(rotation, Vector3.forward));
+        on.ShootForward();
 
-            Debug.Log("Fired gun");
-        }
-        else
-        {
-            Debug.Log("Tried to fire");
-        }
+        cooldownTimer = coolDownTime;
+        Debug.Log("Fired gun");
     }
-          
 }

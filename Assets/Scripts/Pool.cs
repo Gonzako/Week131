@@ -77,6 +77,8 @@ namespace GonzakoUtils.DataStructures
             }
         }
 
+        
+
         #endregion
 
         #region Constructors
@@ -105,7 +107,17 @@ namespace GonzakoUtils.DataStructures
 
 
             Populate(count);
-        } 
+        }
+
+        public Pool(int count, T clone, Transform parent = null)
+        {
+            avaliableItems = new Queue<T>();
+            Blueprint = clone;
+
+            this.parent = parent;
+
+            Populate(Blueprint, count, parent);
+        }
         #endregion
 
         private bool Populate(int count)
@@ -114,7 +126,7 @@ namespace GonzakoUtils.DataStructures
             return Populate(Blueprint, count);
         }
 
-        private bool Populate(T blueprint, int count, Transform parent = null)
+        private bool Populate(T blueprint, int count, Transform transform = null)
         {
             parent = this.parent;
             T startObj = CreateObject(blueprint);

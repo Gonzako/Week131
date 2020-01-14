@@ -6,22 +6,28 @@ using GonzakoUtils.DataStructures;
 public class ItemListManager : MonoBehaviour
 {
     public GameObject _defaultItemData;
-    //Pool<GameObject> _itemPool;
+    Pool<GameObject> _itemPool;
     ShopViewManager _shopmanager;
     Transform _trans;
     
 
     public delegate void ItemListEvents();
     public static ItemListEvents onAllItemsLoaded;
+    private void Awake()
+    {
+        _itemPool = new Pool<GameObject>(1, _defaultItemData, transform);
+    }
     private void OnEnable()
     {
         _trans = GetComponent<Transform>();
         ShopViewManager.onShopOpen += InstantiateShopInventory;
+        ShopViewManager.onShopUpdate += InstantiateShopInventory;
     }
 
     private void OnDisable()
     {
         ShopViewManager.onShopOpen -= InstantiateShopInventory;
+        ShopViewManager.onShopUpdate -= InstantiateShopInventory;
     }
 
     private void InstantiateShopInventory(List<ItemShopMask>inventory)
@@ -30,13 +36,30 @@ public class ItemListManager : MonoBehaviour
         foreach(ItemShopMask m in inventory)
         {
             Debug.Log("wtf");
-            GameObject on = ShopItemPooler._pooler.getpooledObject();
+            GameObject on = _itemPool.getNextObj();
             Debug.Log(on.name);
-            on.transform.SetParent(_trans);
+            //on.transform.SetParent(_trans);
             on.transform.localScale = new Vector3(1F, 1F, 1F);
             on.SetActive(true);
             on.GetComponent<ItemInformation>().SetData(m);
         }
         onAllItemsLoaded?.Invoke();
+    }
+
+    private void UpdateList(List<ItemShopMask> inventory)
+    {
+        
+        _itemPool = new Pool<GameObject>(1, _defaultItemData);
+        foreach (ItemShopMask m in inventory)
+        {
+            Debug.Log("wtf");
+            GameObject on = _itemPool.getNextObj();
+            Debug.Log(on.name);
+            //on.transform.SetParent(_trans);
+            on.transform.localScale = new Vector3(1F, 1F, 1F);
+            on.SetActive(true);
+            on.GetComponent<ItemInformation>().SetData(m);
+        }
+
     }
 }
