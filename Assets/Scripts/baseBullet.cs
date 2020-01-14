@@ -10,7 +10,8 @@ using UnityEngine;
 public class baseBullet : MonoBehaviour
 {
     #region Public Fields
-
+    [SerializeField]
+    private float Speed = 4;
     #endregion
  
     #region Private Fields
@@ -19,7 +20,7 @@ public class baseBullet : MonoBehaviour
     #region Public Methods
     public void ShootForward()
     {
-        GetComponent<Rigidbody2D>().AddForce(-transform.right * 5F, ForceMode2D.Impulse);
+        GetComponent<Rigidbody2D>().AddForce(transform.right * Speed, ForceMode2D.Impulse);
     }
     #endregion
 
