@@ -5,15 +5,17 @@ using UnityEngine;
 public class MoveSound : MonoBehaviour
 { 
     movementAnimator movAnim;
+    AudioSource audioSource;
 
     private void handleMoveStart(Vector2 direction)
     {
-        Debug.Log("POOP");
+        audioSource.Play(); 
     }
 
 
     void Start()
     {
+        audioSource = GetComponent<AudioSource>(); 
     }
 
     private void OnEnable()
