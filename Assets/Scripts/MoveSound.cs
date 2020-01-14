@@ -25,7 +25,7 @@ public class MoveSound : MonoBehaviour
     private void handleMoveStart(Vector2 direction)
     {
         audioSource.pitch = Random.Range(0.9f, 1.1f); 
-        audioSource.Play(); 
+        audioSource.Play();
     }
 
     void playRun()
@@ -89,9 +89,36 @@ public class MoveSound : MonoBehaviour
     }
     void FixedUpdate()
     {
-        if (Input.GetKeyDown(KeyCode.W))
+        if (Input.GetKey(KeyCode.W))
         {
             if (cooldownTimer<Time.time)
+            {
+                playRun();
+                cooldownTimer = coolDownTime + Time.time;
+            }
+        }
+
+        if (Input.GetKey(KeyCode.A))
+        {
+            if (cooldownTimer < Time.time)
+            {
+                playRun();
+                cooldownTimer = coolDownTime + Time.time;
+            }
+        }
+
+        if (Input.GetKey(KeyCode.S))
+        {
+            if (cooldownTimer < Time.time)
+            {
+                playRun();
+                cooldownTimer = coolDownTime + Time.time;
+            }
+        }
+
+        if (Input.GetKey(KeyCode.D))
+        {
+            if (cooldownTimer < Time.time)
             {
                 playRun();
                 cooldownTimer = coolDownTime + Time.time;
