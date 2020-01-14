@@ -5,9 +5,10 @@ using UnityEngine;
 public class MoveSound : MonoBehaviour
 { 
     movementAnimator movAnim;
-    AudioSource audioSource;
-    AudioSource footstepsSource;
+    public AudioSource footstepsSource;
+    public AudioSource whooshSFX; 
     public AudioClip[] footsteps;
+    public AudioClip[] whoosh; 
     public static int shuffle;
 
     //Target shuffle length. Need a non static variable to show in Unity inspector. 
@@ -24,8 +25,10 @@ public class MoveSound : MonoBehaviour
 
     private void handleMoveStart(Vector2 direction)
     {
-        audioSource.pitch = Random.Range(0.9f, 1.1f); 
-        audioSource.Play();
+        whooshSFX.pitch = (Random.Range(1.0f, 1.3f)); 
+        whooshSFX.clip = whoosh[randomWhoosh()];
+        whooshSFX.Play();
+
     }
 
     void playRun()
@@ -50,8 +53,8 @@ public class MoveSound : MonoBehaviour
             currentIndex = 0;
         }
         //Plays sound. Apparently this method is better as we made a variable and stored it rather than using a getter each time. 
-        audioSource.clip = footsteps[soundPlaying];
-        audioSource.Play();
+        footstepsSource.clip = footsteps[soundPlaying];
+        footstepsSource.Play();
         //Resets currentIndex when it equals shuffle number
 
 
@@ -64,11 +67,15 @@ public class MoveSound : MonoBehaviour
 
     }
 
+    int randomWhoosh()
+    {
+        int random = Random.Range(0, whoosh.Length);
+        return random; 
+    }
+
 
     void Start()
     {
-        audioSource = GetComponent<AudioSource>();
-        footstepsSource = GetComponent<AudioSource>(); 
         shuffle = setShuffle;
         //initializing index length to the same as shuffle
         index = new int[shuffle];
