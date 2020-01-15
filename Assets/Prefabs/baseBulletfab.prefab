@@ -14,14 +14,14 @@ GameObject:
   - component: {fileID: 4630109008513307949}
   - component: {fileID: 1471794627721580555}
   - component: {fileID: 7353788279966771438}
-  - component: {fileID: 3966838240481769964}
+  - component: {fileID: 2536448203509379784}
   m_Layer: 12
   m_Name: baseBulletfab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8688045679930726195
 Transform:
   m_ObjectHideFlags: 0
@@ -74,8 +74,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: 21300000, guid: 726831939d2f42b439861c78001d5c6c, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 6b8807ad39f074943a60c5d41038b674, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -149,15 +149,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _destructionTime: 1
---- !u!114 &3966838240481769964
-MonoBehaviour:
+--- !u!95 &2536448203509379784
+Animator:
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 555665275330905296}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a50520ccc61a1fb439187309a90c2866, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 70d16dfb684c5d345923cef998703b26, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

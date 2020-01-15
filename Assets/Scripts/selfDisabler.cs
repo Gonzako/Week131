@@ -7,8 +7,11 @@ public class selfDisabler : MonoBehaviour
 
     [SerializeField] private float _destructionTime;
     float timer;
+    private Animator _anim;
+
     private void OnEnable()
     {
+        _anim = GetComponent<Animator>();
         timer = _destructionTime;
     }
 
@@ -17,7 +20,7 @@ public class selfDisabler : MonoBehaviour
     {
         if(timer  < 0)
         {
-            this.gameObject.SetActive(false);
+            _anim.SetTrigger("impact");
         }
         timer -= Time.deltaTime;
     }
