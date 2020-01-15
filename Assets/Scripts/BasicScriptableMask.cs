@@ -22,6 +22,7 @@ public class BasicScriptableMask : ScriptableObject
 
     
     private float cooldownTimer = -1;
+    private Pool<GameObject> pool;
 
     public GameObject Fire(Transform position, float rotation)
     {
@@ -45,11 +46,18 @@ public class BasicScriptableMask : ScriptableObject
 
     public void prepareData()
     {
-
+        int starterPool = (int)(10 / coolDownTime);
+        pool = new Pool<GameObject>(starterPool, bulletToSpawn.gameObject);
     }
 
     public void disposeData()
     {
-
+        var allGO = pool.getAllpooledItems();
+        foreach(GameObject n in allGO)
+        {
+            Destroy(n);
+        }
     }
+
+    public void poolBullet(GameObject bulletToPool) { pool.enPool(bulletToPool); }
 }

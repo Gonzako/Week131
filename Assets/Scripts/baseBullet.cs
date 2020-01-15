@@ -4,7 +4,8 @@
  * Gonzako123@gmail.com
  *
  */
- 
+
+using System;
 using UnityEngine;
  
 public class baseBullet : MonoBehaviour
@@ -12,6 +13,8 @@ public class baseBullet : MonoBehaviour
     #region Public Fields
     [SerializeField]
     private float Speed = 4;
+
+    public event Action<GameObject> onThisDisable;
     #endregion
  
     #region Private Fields
@@ -39,7 +42,11 @@ public class baseBullet : MonoBehaviour
     {
     }
 
+    private void OnDisable()
+    {
+        onThisDisable?.Invoke(this.gameObject);
+    }
     #endregion
-    #endif
- 
+#endif
+
 }
