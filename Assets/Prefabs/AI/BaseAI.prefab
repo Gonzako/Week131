@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3264387111386998508}
   - component: {fileID: 3264387111386998511}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 2117566892}
   - component: {fileID: 2117566891}
   - component: {fileID: 6917173473180196751}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: BaseAI
   m_TagString: NPC
   m_Icon: {fileID: 0}
@@ -227,7 +227,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6576003641267722623}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Visuals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
