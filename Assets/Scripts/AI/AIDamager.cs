@@ -1,9 +1,12 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class AIDamager : MonoBehaviour
 {
+
+    public static Action<GameObject> onPlayerHit;
 
     [SerializeField] private int _damage;
     [SerializeField] private float forceMultiplier = 10;
@@ -17,6 +20,7 @@ public class AIDamager : MonoBehaviour
                 GetContact(0).normal * _damage * forceMultiplier, ForceMode2D.Impulse);
             collision.rigidbody.AddForce(collision.GetContact(0).normal *
                 _damage * forceMultiplier, ForceMode2D.Impulse);
+            onPlayerHit?.Invoke(this.gameObject);
             Damage(m);
         }
     }
