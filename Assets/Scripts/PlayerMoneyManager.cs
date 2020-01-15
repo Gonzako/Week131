@@ -6,7 +6,7 @@ public class PlayerMoneyManager : MonoBehaviour
 {
 
     [SerializeField] private Text _moneytxt;
-    private int _playerMoney;
+    [SerializeField] private int _playerMoney = 0;
     private gunManager _gun;
 
     public delegate void PlayerMoneyEvents(ItemShopMask mask);
@@ -14,7 +14,7 @@ public class PlayerMoneyManager : MonoBehaviour
 
     private void OnEnable()
     {
-        _playerMoney = 0;
+        //_playerMoney ;
         _gun = GetComponent<gunManager>();
         ItemInformation.onItemBuy += HandleTransaction;
         Mortal.onAnyNpcDead += GotKill;

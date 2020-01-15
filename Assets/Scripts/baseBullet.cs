@@ -55,6 +55,7 @@ public class baseBullet : MonoBehaviour
         {
             IMortal m = collision.transform.GetComponent<IMortal>();
             m.Damage(_damage);
+            this.gameObject.SetActive(false);
         }
     }
     #endregion

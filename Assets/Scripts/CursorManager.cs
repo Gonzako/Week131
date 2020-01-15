@@ -5,25 +5,35 @@ using UnityEngine;
 public class CursorManager : MonoBehaviour
 {
     public Texture2D cursorTexture;
+    public Texture2D shopTexture;
     public CursorMode cursorMode = CursorMode.Auto;
     public Vector2 hotSpot = Vector2.zero;
-    void OnMouseEnter()
+
+    private void OnEnable()
+    {
+        ShopViewManager.onShopOpen += EnableShopCursor;
+        ShopViewManager.onShopClose += DisableShopCursor;
+    }
+
+
+    private void OnDisable()
+    {
+        ShopViewManager.onShopOpen -= EnableShopCursor;
+        ShopViewManager.onShopClose -= DisableShopCursor;
+    }
+
+    private void Start()
     {
         Cursor.SetCursor(cursorTexture, hotSpot, cursorMode);
     }
 
-    void OnMouseExit()
+    private void EnableShopCursor(List<ItemShopMask> inventory)
     {
-        Cursor.SetCursor(null, Vector2.zero, cursorMode);
+        Cursor.SetCursor(shopTexture, hotSpot, cursorMode);
     }
 
-    private void EnableCursor()
+    private void DisableShopCursor(List<ItemShopMask> inventory)
     {
-        Cursor.visible = true;
-    }
-
-    private void DisablCursor()
-    {
-        Cursor.visible = false;
+        Cursor.SetCursor(cursorTexture, hotSpot, cursorMode);
     }
 }

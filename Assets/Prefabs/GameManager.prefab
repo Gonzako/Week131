@@ -11,6 +11,11 @@ GameObject:
   - component: {fileID: 6406135099418241947}
   - component: {fileID: 6406135099418241946}
   - component: {fileID: 6406135099418241945}
+  - component: {fileID: 4425987634092111032}
+  - component: {fileID: 2095435336}
+  - component: {fileID: 2095435337}
+  - component: {fileID: 2095435341}
+  - component: {fileID: 2095435342}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -57,7 +62,84 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _GameSettings:
-    _ShopTime: 5
+    _ShopTime: 60
+    _shop: {fileID: 0}
     _countdownTime: 5
     _timerHudTxt: {fileID: 0}
     _waveCount: {fileID: 0}
+  _currentWave: 0
+--- !u!114 &4425987634092111032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6406135099418241944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a294111097821134b9211ca2fe1ba28a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _shopInventory:
+  - _name: Four way humba
+    _maskCost: 10
+    _description: Like it's name says this mask fires into all directions.
+    _spriteImage: {fileID: 1624711070866809267, guid: 8a39e0c1ea8a2bf4aad52eb7e4520da2,
+      type: 3}
+    _power: {fileID: 11400000, guid: 969f195683f7a5e458da5e14d7627074, type: 2}
+  _panel: {fileID: 0}
+--- !u!114 &2095435336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6406135099418241944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a31c20bb3e65d9e4e9418f6ea317fc3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _view: {fileID: 0}
+--- !u!114 &2095435337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6406135099418241944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 764fa76c556316247a6fe8067ad8339c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2095435341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6406135099418241944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 450cf2f46f242f24695e695e58e9e48a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cursorTexture: {fileID: 2800000, guid: 7c9607106c3d21745a51617984ee9496, type: 3}
+  shopTexture: {fileID: 2800000, guid: a9bac698a0292384baba6f8519d3e110, type: 3}
+  cursorMode: 1
+  hotSpot: {x: 0, y: 0}
+--- !u!114 &2095435342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6406135099418241944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a294111097821134b9211ca2fe1ba28a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _shopInventory: []
+  _panel: {fileID: 0}

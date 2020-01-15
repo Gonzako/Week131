@@ -17,7 +17,7 @@ public class Spawner : MonoBehaviour
 
     private void Awake()
     {
-        _npcPool = new Pool<AIManager>(0, _defaultData);
+        _npcPool = new Pool<AIManager>(8, _defaultData);
     }
 
     [Range(0.0F, 500F)]
@@ -29,10 +29,7 @@ public class Spawner : MonoBehaviour
     {
         _gsm = FindObjectOfType<GameManager>();
         Mortal.onAnyNpcDead += onAIDestroyed;
-
         _gsm.onShouldSpawnEnemies += SpawnRandomly;
-
-        
     }
 
     private void OnDisable()
@@ -55,7 +52,8 @@ public class Spawner : MonoBehaviour
             {
 
                 AIManager b = _npcPool.getNextObj();
-                b.transform.position = new Vector2(Random.Range(transform.position.x, _spawnRadius),
+                b.transform.position = new Vector2(
+                    Random.Range(transform.position.x, _spawnRadius),
                     Random.Range(transform.position.y, _spawnRadius));
                 b.gameObject.SetActive(true);
             }

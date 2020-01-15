@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6507044490477135048}
   - component: {fileID: 4630109008513307949}
   - component: {fileID: 1471794627721580555}
+  - component: {fileID: 7353788279966771438}
   m_Layer: 0
   m_Name: baseBulletfab
   m_TagString: Untagged
@@ -134,3 +135,16 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &7353788279966771438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 555665275330905296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 001f0618523efa842a86bb0a4bfbae5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _destructionTime: 1

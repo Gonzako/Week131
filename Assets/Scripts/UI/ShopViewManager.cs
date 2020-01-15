@@ -16,7 +16,7 @@ public class ShopViewManager : MonoBehaviour
     public delegate void ShopEvents(List<ItemShopMask> inventory);
     public ShopEvents onShoppingDone;
     public static ShopEvents onShopOpen;
-    public ShopEvents onShopClose;
+    public static ShopEvents onShopClose;
     public static ShopEvents onShopUpdate;
 
     private const float _timeToWait = 2f;
@@ -34,14 +34,14 @@ public class ShopViewManager : MonoBehaviour
         _gameStateManager.onStateChanged += ShopHandle;
 
         ItemInformation.onItemBuy += Transaction;
-        ShopOpener.onAnyOpenCommand += OpenShop;
+        ShopInteractable.onAnyOpenCommand += OpenShop;
         PlayerMoneyManager.onReturnMask += AddIntoInventory;
     }
 
     private void OnDisable()
     {
         _gameStateManager.onStateChanged -= ShopHandle;
-        ShopOpener.onAnyOpenCommand -= OpenShop;
+        ShopInteractable.onAnyOpenCommand -= OpenShop;
         PlayerMoneyManager.onReturnMask -= AddIntoInventory;
     }
 
