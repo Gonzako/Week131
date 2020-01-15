@@ -19,6 +19,7 @@ public class ShopInteractable : MonoBehaviour
         _shopInteractelement.text = "";
     }
 
+
     private void Start()
     {
         _cam = Camera.main;
