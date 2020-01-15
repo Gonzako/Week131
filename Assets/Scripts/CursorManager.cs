@@ -19,7 +19,7 @@ public class CursorManager : MonoBehaviour
 
     private void EnableCursor()
     {
-        Cursor.visible = ;
+        Cursor.visible = true;
     }
 
     private void DisablCursor()

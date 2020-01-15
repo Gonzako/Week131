@@ -31,6 +31,7 @@ public class Spawner : MonoBehaviour
         Mortal.onAnyNpcDead += onAIDestroyed;
 
         _gsm.onShouldSpawnEnemies += SpawnRandomly;
+
         
     }
 
