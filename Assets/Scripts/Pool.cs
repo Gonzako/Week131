@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
 using Object = UnityEngine.Object;
@@ -28,6 +29,7 @@ namespace GonzakoUtils.DataStructures
         /// <see langword="false"/>.
         /// </summary>
         public bool Empty => avaliableItems.Count == 0; 
+
         #endregion
 
 
@@ -77,7 +79,10 @@ namespace GonzakoUtils.DataStructures
             }
         }
 
-        
+        public List<T> getAllpooledItems()
+        {
+            return avaliableItems.ToList();
+        }
 
         #endregion
 

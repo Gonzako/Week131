@@ -4,7 +4,8 @@
  * Gonzako123@gmail.com
  *
  */
- 
+
+using System;
 using UnityEngine;
  
 public class baseBullet : MonoBehaviour
@@ -12,7 +13,8 @@ public class baseBullet : MonoBehaviour
     #region Public Fields
     [SerializeField]
     private float Speed = 4;
-    [SerializeField]private int _damage = 1;
+
+    public event Action<GameObject> onThisDisable;
     #endregion
  
     #region Private Fields
@@ -40,18 +42,10 @@ public class baseBullet : MonoBehaviour
     {
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnDisable()
     {
-        Debug.Log("Hit" + collision.transform.tag);
-        IMortal t = collision.gameObject.GetComponent<IMortal>();
-        if(t != null)
-         t.Damage(_damage);
-
-        
+        onThisDisable?.Invoke(this.gameObject);
     }
-
-   
-
     #endregion
 #endif
 

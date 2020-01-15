@@ -6,6 +6,7 @@
  */
 
 using UnityEngine;
+using GonzakoUtils.DataStructures;
 
 [CreateAssetMenu(menuName = "Gameplay/SimpleMask")]
 public class BasicScriptableMask : ScriptableObject
@@ -19,9 +20,11 @@ public class BasicScriptableMask : ScriptableObject
     [SerializeField]
     private float coolDownTime = 0.2f;
 
-    private float cooldownTimer = -Mathf.Infinity;
+    
+    private float cooldownTimer = -1;
+    private Pool<GameObject> pool;
 
-    public void Fire(Transform position, float rotation)
+    public GameObject Fire(Transform position, float rotation)
     {
         if (cooldownTimer < Time.time)
         {
@@ -31,15 +34,30 @@ public class BasicScriptableMask : ScriptableObject
             cooldownTimer = coolDownTime;
             Debug.Log("Fired gun");
             cooldownTimer = Time.time + coolDownTime;
+            return on.gameObject;
         }
         else
         {
+
             Debug.Log("Gun on cooldown");
+            return null;
         }
     }
 
-    public void ResetTimer()
+    public void prepareData()
     {
-        cooldownTimer = 0;
+        int starterPool = (int)(10 / (coolDownTime+0.1f));
+        pool = new Pool<GameObject>(starterPool, bulletToSpawn.gameObject);
     }
+
+    public void disposeData()
+    {
+        var allGO = pool.getAllpooledItems();
+        foreach(GameObject n in allGO)
+        {
+            Destroy(n);
+        }
+    }
+
+    public void poolBullet(GameObject bulletToPool) { pool.enPool(bulletToPool); }
 }
