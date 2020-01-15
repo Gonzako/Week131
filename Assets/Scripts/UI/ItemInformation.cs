@@ -1,9 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class ItemInformation : MonoBehaviour
+public class ItemInformation : MonoBehaviour, IPointerEnterHandler
 {
     
 
@@ -68,5 +69,9 @@ public class ItemInformation : MonoBehaviour
         onItemBuy?.Invoke(_data, gameObject);
     }
 
-   
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        Debug.Log("Mouse is over GameObject.");
+        this.onItemChosen?.Invoke(_data, this.gameObject);
+    }
 }

@@ -10,10 +10,13 @@ public class ItemSelection : MonoBehaviour
     [SerializeField] private Text _description;
     [SerializeField] private Sprite _sprite;
 
+    [SerializeField] private GameObject _emptyPanel;
+
     [SerializeField] private GameObject _listParent;
     [SerializeField] ItemInformation[] items;
 
-    private GameObject _chosen;
+    private GameObject _chosengb;
+    private ItemShopMask _chosenmask;
 
     
 
@@ -37,7 +40,22 @@ public class ItemSelection : MonoBehaviour
             }
         }
     }
+    private void FixedUpdate()
+    {
+        if (_chosengb != null)
+        {
+            _emptyPanel.SetActive(false);
+            _name.text = _chosenmask._name;
+            _cost.text = _chosenmask._maskCost.ToString();
+            _description.text = _chosenmask._description;
+            _sprite = _chosenmask._spriteImage;
+        }
+        else
+        {
+            _emptyPanel.SetActive(true);
+        }
 
+    }
     private void OnDisable()
     {
         ItemListManager.onAllItemsLoaded -= Subsribe;
@@ -53,21 +71,19 @@ public class ItemSelection : MonoBehaviour
 
     private void UpdateDescription(ItemShopMask mask, GameObject ob)
     {
-        Debug.Log(mask._name);
-        _name.text = mask._name;
-        _cost.text = mask._maskCost.ToString();
-        _description.text = mask._description;
-        _sprite = mask._spriteImage;
-
-
-        if (_chosen == null)
-            _chosen = ob;
+        if (_chosengb == null)
+        {
+            ob.GetComponent<Image>().color = Color.red;
+            _chosengb = ob;
+            _chosenmask = mask;
+        }
         else
         {
             ob.GetComponent<Image>().color = Color.red;
-            _chosen.GetComponent<Image>().color = Color.white;
-
-            _chosen = ob;
+            _chosengb.GetComponent<Image>().color = Color.white;
+            _chosengb = ob;
+            _chosenmask = mask;
         }
+        
     }
 }
