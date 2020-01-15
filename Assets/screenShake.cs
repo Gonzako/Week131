@@ -7,6 +7,7 @@
  
 using UnityEngine;
 using DG.Tweening;
+using Cinemachine;
 
 public class screenShake : MonoBehaviour
 {
@@ -20,7 +21,7 @@ public class screenShake : MonoBehaviour
     #region Private Fields
     Tween kickUpTween;
     Tween fallbackTween;
-    Camera cam;
+    CinemachineVirtualCamera cam;
     Sequence fovKickSequence;
     float defSize;
     #endregion
@@ -29,9 +30,9 @@ public class screenShake : MonoBehaviour
     public void fovKick(float kickStrengh, float kickTime, float fallbackDuration)
     {
         fovKickSequence = DOTween.Sequence();
-        kickUpTween = DOTween.To(() => cam.orthographicSize, x => cam.orthographicSize = x, cam.orthographicSize + kickStrengh, kickTime).SetEase(kickUpEase);
+        kickUpTween = DOTween.To(() => cam.m_Lens.OrthographicSize, x => cam.m_Lens.OrthographicSize = x, cam.m_Lens.OrthographicSize + kickStrengh, kickTime).SetEase(kickUpEase);
         fovKickSequence.Append(kickUpTween)
-            .Append(fallbackTween = DOTween.To(() => cam.orthographicSize, x => cam.orthographicSize = x, defSize, fallbackDuration).SetEase(fallbackEase));
+            .Append(fallbackTween = DOTween.To(() => cam.m_Lens.OrthographicSize, x => cam.m_Lens.OrthographicSize = x, defSize, fallbackDuration).SetEase(fallbackEase));
         
     }
     #endregion
@@ -45,8 +46,8 @@ public class screenShake : MonoBehaviour
 
     void Start()
     {
-        cam = GetComponent<Camera>();
-        defSize = cam.orthographicSize;
+        cam = GetComponent<CinemachineVirtualCamera>();
+        defSize = cam.m_Lens.OrthographicSize;
     }
  
     void FixedUpdate()
