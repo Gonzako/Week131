@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -1571,36 +1571,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4640178877867022231, guid: 9cad5c2cf3e345643b83d4dce8dbdebe,
-        type: 3}
-      propertyPath: m_Layer
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 4697123643038879275, guid: 9cad5c2cf3e345643b83d4dce8dbdebe,
-        type: 3}
-      propertyPath: m_Layer
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 4697123643038975108, guid: 9cad5c2cf3e345643b83d4dce8dbdebe,
-        type: 3}
-      propertyPath: m_Layer
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 4697123643516662353, guid: 9cad5c2cf3e345643b83d4dce8dbdebe,
-        type: 3}
-      propertyPath: m_Layer
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 4697123644020169391, guid: 9cad5c2cf3e345643b83d4dce8dbdebe,
-        type: 3}
-      propertyPath: m_Layer
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 4697123644041883813, guid: 9cad5c2cf3e345643b83d4dce8dbdebe,
-        type: 3}
-      propertyPath: m_Layer
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 4697123644209940686, guid: 9cad5c2cf3e345643b83d4dce8dbdebe,
         type: 3}
       propertyPath: m_Name
@@ -1663,61 +1633,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9cad5c2cf3e345643b83d4dce8dbdebe, type: 3}
---- !u!1 &1104436910 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4697123643038975108, guid: 9cad5c2cf3e345643b83d4dce8dbdebe,
-    type: 3}
-  m_PrefabInstance: {fileID: 1104436909}
-  m_PrefabAsset: {fileID: 0}
---- !u!58 &1104436911
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1104436910}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.176315
 --- !u!4 &1104436912 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4697123643038975111, guid: 9cad5c2cf3e345643b83d4dce8dbdebe,
     type: 3}
   m_PrefabInstance: {fileID: 1104436909}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1104436926
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1104436910}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a64c5ddcda9e664a85682e856fdf1ed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _HealthPoints: 100
---- !u!114 &1104436927
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1104436910}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af63fd16650183643bc259fe61e1ba5d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _moneytxt: {fileID: 1987221982}
-  _playerMoney: 99999999
 --- !u!1001 &1303441005
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -49855,18 +49776,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fd3d1d9f9bbb45a43a671d31a867d5aa, type: 3}
---- !u!114 &1987221982 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4162950455313110185, guid: 7d756b697caff45408265a019fbfb218,
-    type: 3}
-  m_PrefabInstance: {fileID: 664439643}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &6409243156136571681
 PrefabInstance:
   m_ObjectHideFlags: 0
