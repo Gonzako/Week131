@@ -29,6 +29,7 @@ public class BasicScriptableMask : ScriptableObject
         if (cooldownTimer < Time.time)
         {
             baseBullet on = pool.getNextObj().GetComponent<baseBullet>();
+            on.transform.position = position.position;
             on.onThisDisable += poolBullet;
             on.transform.rotation = Quaternion.AngleAxis(rotation, Vector3.forward);
             on.gameObject.SetActive(true);

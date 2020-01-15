@@ -1592,6 +1592,21 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 4697123643971199172, guid: 9cad5c2cf3e345643b83d4dce8dbdebe,
+        type: 3}
+      propertyPath: InitialModule.startSize.minScalar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4697123643971199172, guid: 9cad5c2cf3e345643b83d4dce8dbdebe,
+        type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4697123643971199172, guid: 9cad5c2cf3e345643b83d4dce8dbdebe,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.a
+      value: 0.73333335
+      objectReference: {fileID: 0}
     - target: {fileID: 4697123644020169391, guid: 9cad5c2cf3e345643b83d4dce8dbdebe,
         type: 3}
       propertyPath: m_Layer
@@ -1718,6 +1733,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _moneytxt: {fileID: 1987221982}
+  _playerMoney: 0
 --- !u!1001 &1303441005
 PrefabInstance:
   m_ObjectHideFlags: 0
