@@ -49,7 +49,7 @@ public class BasicScriptableMask : ScriptableObject
 
     public void prepareData()
     {
-        int starterPool = (int)(10 / (coolDownTime+0.1f));
+        int starterPool = (int)(5 / (coolDownTime+0.1f));
         pool = new Pool<GameObject>(starterPool, bulletToSpawn.gameObject);
         cooldownTimer = 0;
     }
