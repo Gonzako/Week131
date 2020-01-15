@@ -7,13 +7,18 @@ public class Spawner : MonoBehaviour
 {
 
     [SerializeField] private AIManager _defaultData;
-    private GameStateManager _gsm;
-    
+    private GameManager _gsm;
+
 
     //Ball needs to be gameobject prefab with defined class type:
-    [SerializeField] Pool<AIManager> _npcPool = new Pool<AIManager>(30);
+    [SerializeField] Pool<AIManager> _npcPool;
 
 
+
+    private void Awake()
+    {
+        _npcPool = new Pool<AIManager>(0, _defaultData);
+    }
 
     [Range(0.0F, 500F)]
     [SerializeField] private float _spawnRadius;
@@ -22,16 +27,17 @@ public class Spawner : MonoBehaviour
 
     private void OnEnable()
     {
-        _gsm = FindObjectOfType<GameStateManager>();
+        _gsm = FindObjectOfType<GameManager>();
         Mortal.onAnyNpcDead += onAIDestroyed;
 
-        _gsm.onStateChanged += SpawnRandomly;
+        _gsm.onShouldSpawnEnemies += SpawnRandomly;
         
     }
 
     private void OnDisable()
     {
         Mortal.onAnyNpcDead -= onAIDestroyed;
+        _gsm.onShouldSpawnEnemies -= SpawnRandomly;
     }
 
     private void onAIDestroyed(Mortal ai)
@@ -41,19 +47,19 @@ public class Spawner : MonoBehaviour
     }
 
   
-    private void SpawnRandomly(GameState state)
+    private void SpawnRandomly(int amount)
     {
-        if(state.GetType() == typeof(WaveState))
-        {
-            for (int i = 0; i < state._GameManager._currentWave * 2; i++)
+
+            for (int i = 0; i < amount; i++)
             {
 
                 AIManager b = _npcPool.getNextObj();
                 b.transform.position = new Vector2(Random.Range(transform.position.x, _spawnRadius),
                     Random.Range(transform.position.y, _spawnRadius));
+                b.gameObject.SetActive(true);
             }
         }
         
 
     }
-}
+

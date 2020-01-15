@@ -16,11 +16,12 @@ public class ShopState : GameState
     public override void OnStateEnter()
     {
         _shoptimer = _GameManager._GameSettings._ShopTime;
-       
+        _GameManager._GameSettings._shop.SetActive(true);
     }
 
     public override void OnStateExit()
     {
+        _GameManager._GameSettings._shop.SetActive(false);
     }
 
     public override Type Tick()

@@ -8,27 +8,23 @@ public class AIManager : MonoBehaviour
 {
     private Dictionary<Type, BaseAIState> _initialStates;
     private AIStateManager _aistatemng;
-    public Seeker _agent;
-    public AILerp _lerp;
-    public AIDestinationSetter _setter;
     public Rigidbody2D _rb;
-   [SerializeField] public AISettings _settings;
+    [SerializeField] public AISettings _settings;
 
-    [SerializeField] public Transform _player;
+    public Transform _player;
 
     
 
     private void OnEnable()
     {
+        _player = GameObject.FindGameObjectWithTag("Player").transform;
         SetupStates();
     }
 
     private void Start()
     {
         SetupStates();
-        _agent = GetComponent<Seeker>();
-        _lerp = GetComponent<AILerp>();
-        _setter = GetComponent<AIDestinationSetter>();
+
         _rb = GetComponent<Rigidbody2D>();
     }
 

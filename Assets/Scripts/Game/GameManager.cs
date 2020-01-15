@@ -12,6 +12,11 @@ public class GameManager : MonoBehaviour
     public delegate void GameEvents();
     public GameEvents onGameFailure;
 
+    public delegate void GameNPCEvents(int amount);
+    public GameNPCEvents onShouldSpawnEnemies;
+
+    
+
     private bool _shoppingDone;
 
     public int _currentWave = 0;

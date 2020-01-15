@@ -23,6 +23,7 @@ public class CountdownState : GameState
     public override void OnStateExit()
     {
         _GameManager._GameSettings._timerHudTxt.enabled = false;
+        _GameManager._currentWave += 1;
     }
 
     public override Type Tick()
