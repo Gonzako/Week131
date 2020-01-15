@@ -23,6 +23,24 @@ TextureImporter:
   - first:
       213: -1511168159299729067
     second: MiniGorilla_6
+  - first:
+      213: 3342631428703383732
+    second: MiniGorilla_7
+  - first:
+      213: -1210143848366971275
+    second: MiniGorilla_8
+  - first:
+      213: -4328808637200073721
+    second: MiniGorilla_9
+  - first:
+      213: 9008012371915317485
+    second: MiniGorilla_10
+  - first:
+      213: -5753325048877422250
+    second: MiniGorilla_11
+  - first:
+      213: 937180361631423627
+    second: MiniGorilla_12
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -184,7 +202,7 @@ TextureImporter:
         width: 25
         height: 26
       alignment: 9
-      pivot: {x: 0.1795352, y: 0}
+      pivot: {x: 0.22707458, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -297,6 +315,132 @@ TextureImporter:
       bones: []
       spriteID: 3e05336ccad2c5c48851e5d6277da0dc
       internalID: -1511168159299729067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MiniGorilla_7
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 23
+        width: 14
+        height: 26
+      alignment: 9
+      pivot: {x: 0.5109256, y: 0.12349554}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 728b7355feadfed4f84a3d02bce946a5
+      internalID: 3342631428703383732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MiniGorilla_8
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 25
+        width: 14
+        height: 24
+      alignment: 9
+      pivot: {x: 0.5109258, y: 0.041134994}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c40bb800e0aef34e882e3459121056d
+      internalID: -1210143848366971275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MiniGorilla_9
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 27
+        width: 14
+        height: 22
+      alignment: 9
+      pivot: {x: 0.50000054, y: -0.056199767}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad1ad5c1c5b828b49954086cc052e848
+      internalID: -4328808637200073721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MiniGorilla_10
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 25
+        width: 14
+        height: 29
+      alignment: 9
+      pivot: {x: 0.52185166, y: -0.0063335155}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1ac5333685c51c43a82c559ad27fb7b
+      internalID: 9008012371915317485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MiniGorilla_11
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 27
+        width: 13
+        height: 27
+      alignment: 9
+      pivot: {x: 0.5000012, y: -0.07782985}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a3678f145b49914facc3dbf702b427f
+      internalID: -5753325048877422250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MiniGorilla_12
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 24
+        width: 13
+        height: 30
+      alignment: 9
+      pivot: {x: 0.48823488, y: 0.045315232}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2659e9881c610b24baa9b4df06393f66
+      internalID: 937180361631423627
       vertices: []
       indices: 
       edges: []
