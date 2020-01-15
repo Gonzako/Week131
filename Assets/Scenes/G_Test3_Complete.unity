@@ -49870,6 +49870,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2095435336, guid: 2c61e0fe4b5323143b88fc20284c1a6d, type: 3}
+      propertyPath: _view
+      value: 
+      objectReference: {fileID: 505587132}
     - target: {fileID: 4425987634092111032, guid: 2c61e0fe4b5323143b88fc20284c1a6d,
         type: 3}
       propertyPath: _shopInventory.Array.size
@@ -49927,6 +49931,11 @@ PrefabInstance:
       propertyPath: _GameSettings._timerHudTxt
       value: 
       objectReference: {fileID: 84649653}
+    - target: {fileID: 6406135099418241945, guid: 2c61e0fe4b5323143b88fc20284c1a6d,
+        type: 3}
+      propertyPath: _GameSettings._ShopTime
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 6406135099418241947, guid: 2c61e0fe4b5323143b88fc20284c1a6d,
         type: 3}
       propertyPath: m_LocalPosition.x

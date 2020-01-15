@@ -14,9 +14,12 @@ public class baseBullet : MonoBehaviour
     [SerializeField]
     private float Speed = 4;
 
+    private Animator _anim;
+
     [SerializeField] private int _damage = 35;
 
     public event Action<GameObject> onThisDisable;
+
     #endregion
  
     #region Private Fields
@@ -38,6 +41,7 @@ public class baseBullet : MonoBehaviour
 
     void Start()
     {
+        _anim = GetComponent<Animator>();
     }
  
     void FixedUpdate()
@@ -55,8 +59,14 @@ public class baseBullet : MonoBehaviour
         {
             IMortal m = collision.transform.GetComponent<IMortal>();
             m.Damage(_damage);
-            this.gameObject.SetActive(false);
+            _anim.SetTrigger("impact");
+           
         }
+    }
+
+    public void DisableMe()
+    {
+        this.gameObject.SetActive(false);
     }
     #endregion
 #endif

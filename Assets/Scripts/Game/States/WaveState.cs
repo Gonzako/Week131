@@ -30,6 +30,9 @@ public class WaveState : GameState
     public override void OnStateExit()
     {
         Mortal.onAnyNpcDead -= AddKillCount;
+        _EnemiesDefeated = false;
+        _killCount = 0;
+
     }
 
     private void AddKillCount(Mortal m)
@@ -44,6 +47,7 @@ public class WaveState : GameState
     {
         if (_EnemiesDefeated)
         {
+           
             return typeof(ShopState);
         }
         return null;
