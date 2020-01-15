@@ -14,6 +14,8 @@ public class GameManager : MonoBehaviour
 
     private bool _shoppingDone;
 
+    public int _currentWave = 0;
+
     private void OnEnable()
     {
         SetupStates();

@@ -12,6 +12,7 @@ public class baseBullet : MonoBehaviour
     #region Public Fields
     [SerializeField]
     private float Speed = 4;
+    [SerializeField]private int _damage = 1;
     #endregion
  
     #region Private Fields
@@ -39,7 +40,19 @@ public class baseBullet : MonoBehaviour
     {
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Debug.Log("Hit" + collision.transform.tag);
+        IMortal t = collision.gameObject.GetComponent<IMortal>();
+        if(t != null)
+         t.Damage(_damage);
+
+        
+    }
+
+   
+
     #endregion
-    #endif
- 
+#endif
+
 }

@@ -14,7 +14,7 @@ public class WaveState : GameState
 
     public override void OnStateEnter()
     {
-        _wavenumber += 1;
+        _GameManager._currentWave += 1;
 
         _GameManager._GameSettings._waveCount.text = "Wave "+_wavenumber.ToString();
     }

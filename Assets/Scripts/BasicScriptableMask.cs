@@ -19,7 +19,7 @@ public class BasicScriptableMask : ScriptableObject
     [SerializeField]
     private float coolDownTime = 0.2f;
 
-    private float cooldownTimer = -1;
+    private float cooldownTimer = -Mathf.Infinity;
 
     public void Fire(Transform position, float rotation)
     {
@@ -36,5 +36,10 @@ public class BasicScriptableMask : ScriptableObject
         {
             Debug.Log("Gun on cooldown");
         }
+    }
+
+    public void ResetTimer()
+    {
+        cooldownTimer = 0;
     }
 }

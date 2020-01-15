@@ -12,6 +12,7 @@ public class AIManager : MonoBehaviour
     public AILerp _lerp;
     public AIDestinationSetter _setter;
     public Rigidbody2D _rb;
+   [SerializeField] public AISettings _settings;
 
     [SerializeField] public Transform _player;
 
@@ -41,3 +42,4 @@ public class AIManager : MonoBehaviour
         _aistatemng.SetStates(_initialStates);
     }
 }
+

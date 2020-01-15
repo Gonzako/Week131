@@ -6,5 +6,5 @@ using UnityEngine;
 public class AISettings 
 {
     [Header("Movement")]
-    public float movementSpeed;
+    [SerializeField] public float _movementSpeed = 3F;
 }

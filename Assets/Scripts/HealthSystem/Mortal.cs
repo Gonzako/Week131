@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class Mortal : MonoBehaviour, IMortal
 {
-    public delegate void MortalEvents(GameObject ai);
+    public delegate void MortalEvents(Mortal ai);
 
     public static MortalEvents onAnyDead;
     public static MortalEvents onAnyNpcDead;
     
 
-    private int _HealthPoints;
+    [SerializeField]private int _HealthPoints;
 
     [SerializeField]private const int _MaxHealth = 100;
 
@@ -22,7 +22,16 @@ public class Mortal : MonoBehaviour, IMortal
     public void Damage(int amount)
     {
         if ((_HealthPoints - amount) <= 0)
-            onAnyNpcDead?.Invoke(this.gameObject);
+        {
+            _HealthPoints = 0;
+            if (gameObject.tag == "NPC")
+            {
+                onAnyNpcDead?.Invoke(this);
+                this.gameObject.SetActive(false);
+            }
+            else
+                onAnyDead?.Invoke(this);
+        }
         else
             _HealthPoints -= amount;
     }
@@ -34,6 +43,6 @@ public class Mortal : MonoBehaviour, IMortal
 
     public bool isDead()
     {
-        throw new System.NotImplementedException();
+        return (_HealthPoints <= 0);       
     }
 }

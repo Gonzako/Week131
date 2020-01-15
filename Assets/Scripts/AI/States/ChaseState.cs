@@ -65,8 +65,10 @@ public class ChaseState : BaseAIState
            // Debug.LogError("Path is null" + _ai.gameObject.name);
         }
 
-        _ai._rb.AddForce(dir * 3F);
+        _ai._rb.AddForce(dir * _ai._settings._movementSpeed);
   
         return null;
     }
 }
+
+

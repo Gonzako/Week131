@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Walls
   - Walkable
+  - NPC
   layers:
   - Default
   - TransparentFX
