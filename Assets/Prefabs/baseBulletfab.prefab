@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4630109008513307949}
   - component: {fileID: 1471794627721580555}
   - component: {fileID: 7353788279966771438}
+  - component: {fileID: 3966838240481769964}
   m_Layer: 12
   m_Name: baseBulletfab
   m_TagString: Untagged
@@ -148,3 +149,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _destructionTime: 1
+--- !u!114 &3966838240481769964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 555665275330905296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a50520ccc61a1fb439187309a90c2866, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
