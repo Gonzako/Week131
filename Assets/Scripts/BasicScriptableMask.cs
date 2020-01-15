@@ -57,6 +57,8 @@ public class BasicScriptableMask : ScriptableObject
         foreach(GameObject n in allGO)
         {
             Destroy(n);
+
+
         }
     }
 
