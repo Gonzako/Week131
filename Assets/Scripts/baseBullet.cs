@@ -14,6 +14,8 @@ public class baseBullet : MonoBehaviour
     [SerializeField]
     private float Speed = 4;
 
+    [SerializeField] private int _damage = 35;
+
     public event Action<GameObject> onThisDisable;
     #endregion
  
@@ -45,6 +47,15 @@ public class baseBullet : MonoBehaviour
     private void OnDisable()
     {
         onThisDisable?.Invoke(this.gameObject);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.transform.tag == "NPC")
+        {
+            IMortal m = collision.transform.GetComponent<IMortal>();
+            m.Damage(_damage);
+        }
     }
     #endregion
 #endif

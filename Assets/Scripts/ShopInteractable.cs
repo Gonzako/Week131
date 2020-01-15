@@ -14,6 +14,10 @@ public class ShopInteractable : MonoBehaviour
    [SerializeField] private Text _shopInteractelement;
     private Camera _cam;
 
+    private void OnDisable()
+    {
+        _shopInteractelement.text = "";
+    }
 
     private void Start()
     {

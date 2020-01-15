@@ -27,6 +27,11 @@ public class WaveState : GameState
         Mortal.onAnyNpcDead += AddKillCount;
     }
 
+    public override void OnStateExit()
+    {
+        Mortal.onAnyNpcDead -= AddKillCount;
+    }
+
     private void AddKillCount(Mortal m)
     {
         _killCount += 1;

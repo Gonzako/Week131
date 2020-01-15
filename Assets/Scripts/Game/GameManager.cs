@@ -15,8 +15,6 @@ public class GameManager : MonoBehaviour
     public delegate void GameNPCEvents(int amount);
     public GameNPCEvents onShouldSpawnEnemies;
 
-    
-
     private bool _shoppingDone;
 
     public int _currentWave = 0;
@@ -26,6 +24,7 @@ public class GameManager : MonoBehaviour
         SetupStates();
    
         _shoppingDone = false;
+        
         
     }
 
@@ -49,4 +48,11 @@ public class GameManager : MonoBehaviour
     {
         return _shoppingDone;
     }
+
+    private void PlayerDeath()
+    {
+
+    }
+
+
 }

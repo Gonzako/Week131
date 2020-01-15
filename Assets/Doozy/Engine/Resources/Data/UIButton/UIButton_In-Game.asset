@@ -18,3 +18,5 @@ MonoBehaviour:
   - RestartLevel
   - BackMM
   - ItemInspect
+  - GameOver
+  - Shop

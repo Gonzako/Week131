@@ -21,14 +21,13 @@ public class ShopViewManager : MonoBehaviour
 
     private const float _timeToWait = 2f;
     private float _timerThatWaits = 0;
-    private gunManager _gun;
+    
 
     [SerializeField] private List<ItemShopMask> _shopInventory;
     [SerializeField] private UIView _panel;
 
     private void OnEnable()
     {
-        _gun = FindObjectOfType<gunManager>();
         _gameStateManager = FindObjectOfType<GameStateManager>();
 
         ShopOpener.onAnyOpenCommand += OpenShop;
@@ -36,12 +35,14 @@ public class ShopViewManager : MonoBehaviour
 
         ItemInformation.onItemBuy += Transaction;
         ShopOpener.onAnyOpenCommand += OpenShop;
+        PlayerMoneyManager.onReturnMask += AddIntoInventory;
     }
 
     private void OnDisable()
     {
         _gameStateManager.onStateChanged -= ShopHandle;
-        ShopOpener.onAnyOpenCommand -= OpenShop;        
+        ShopOpener.onAnyOpenCommand -= OpenShop;
+        PlayerMoneyManager.onReturnMask -= AddIntoInventory;
     }
 
 
@@ -55,7 +56,6 @@ public class ShopViewManager : MonoBehaviour
 
     public void Transaction(ItemShopMask mask, GameObject ob)
     {
-        _gun.Mask = mask._power;
         _shopInventory.Remove(mask);
         onShopUpdate?.Invoke(_shopInventory);
     }
@@ -81,6 +81,11 @@ public class ShopViewManager : MonoBehaviour
             _timerThatWaits = Time.time + _timeToWait;
         }
         
+    }
+
+    private void AddIntoInventory(ItemShopMask mask)
+    {
+        _shopInventory.Add(mask);
     }
 }
 

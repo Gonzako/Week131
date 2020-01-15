@@ -4,15 +4,21 @@ using UnityEngine;
 
 public class AIDamager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+
+    [SerializeField] private int _damage;
+
+    private void OnCollisionStay2D(Collision2D collision)
     {
-        
+        if(collision.transform.tag == "Player")
+        {
+            IMortal m = collision.transform.GetComponent<IMortal>();
+            Damage(m);
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+
+    private void Damage(IMortal mortal)
     {
-        
+        mortal.Damage(_damage);
     }
 }

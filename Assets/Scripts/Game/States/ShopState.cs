@@ -17,6 +17,7 @@ public class ShopState : GameState
     {
         _shoptimer = _GameManager._GameSettings._ShopTime;
         _GameManager._GameSettings._shop.SetActive(true);
+        _GameManager._GameSettings._timerHudTxt.enabled = true;
     }
 
     public override void OnStateExit()

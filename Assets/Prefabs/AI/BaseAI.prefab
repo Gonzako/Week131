@@ -94,6 +94,7 @@ GameObject:
   - component: {fileID: 2117566895}
   - component: {fileID: 2117566892}
   - component: {fileID: 2117566891}
+  - component: {fileID: 6917173473180196751}
   m_Layer: 0
   m_Name: BaseAI
   m_TagString: NPC
@@ -128,9 +129,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab9053c53df26334ca39a5f43e9f470d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _agent: {fileID: 0}
-  _lerp: {fileID: 0}
-  _setter: {fileID: 0}
   _rb: {fileID: 0}
   _settings:
     _movementSpeed: 3
@@ -206,7 +204,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a64c5ddcda9e664a85682e856fdf1ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _HealthPoints: 0
+  _HealthPoints: 100
+--- !u!114 &6917173473180196751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3264387112172266538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52f3e8acbdb3f254da49ab351e8d7b1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _damage: 1
 --- !u!1 &7031942794609464058
 GameObject:
   m_ObjectHideFlags: 0
