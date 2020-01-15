@@ -12,13 +12,13 @@ GameObject:
   - component: {fileID: 4633647539837869916}
   - component: {fileID: 4633647539837869917}
   - component: {fileID: 4633647539837869918}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: AI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4633647539837869919
 Transform:
   m_ObjectHideFlags: 0
@@ -110,7 +110,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4633647540641287920}
   - component: {fileID: 4633647540641287923}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -190,7 +190,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4633647541178578279}
   - component: {fileID: 4633647541178578278}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Sprite (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -28,7 +28,10 @@ public class BasicScriptableMask : ScriptableObject
     {
         if (cooldownTimer < Time.time)
         {
-            baseBullet on = Instantiate(bulletToSpawn, position.position, Quaternion.AngleAxis(rotation, Vector3.forward));
+            baseBullet on = pool.getNextObj().GetComponent<baseBullet>();
+            on.onThisDisable += poolBullet;
+            on.transform.rotation = Quaternion.AngleAxis(rotation, Vector3.forward);
+            on.gameObject.SetActive(true);
             on.ShootForward();
 
             cooldownTimer = coolDownTime;
@@ -46,7 +49,7 @@ public class BasicScriptableMask : ScriptableObject
 
     public void prepareData()
     {
-        int starterPool = (int)(10 / (coolDownTime+0.1f));
+        int starterPool = (int)(5 / (coolDownTime+0.1f));
         pool = new Pool<GameObject>(starterPool, bulletToSpawn.gameObject);
         cooldownTimer = 0;
     }
@@ -60,5 +63,5 @@ public class BasicScriptableMask : ScriptableObject
         }
     }
 
-    public void poolBullet(GameObject bulletToPool) { pool.enPool(bulletToPool); }
+    public void poolBullet(GameObject bulletToPool) { pool.enPool(bulletToPool); bulletToPool.GetComponent<baseBullet>().onThisDisable -= poolBullet; }
 }
