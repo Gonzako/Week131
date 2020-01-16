@@ -24,7 +24,7 @@ public class BasicScriptableMask : ScriptableObject
     private float cooldownTimer = -1;
     private Pool<GameObject> pool;
 
-    public GameObject Fire(Transform position, float rotation)
+    public virtual GameObject Fire(Transform position, float rotation)
     {
         if (cooldownTimer < Time.time)
         {
