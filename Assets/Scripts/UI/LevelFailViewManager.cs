@@ -2,27 +2,28 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Doozy.Engine.UI;
-
+using TMPro;
 
 public class LevelFailViewManager : MonoBehaviour
 {
 
     [SerializeField] UIView _view;
+    [SerializeField] TextMeshProUGUI _waveTxt;
+
     private void OnEnable()
     {
-        Mortal.onAnyDead += PlayerDeath;
+
+        GameManager.onGameFailure += PlayerDeath;
     }
 
     private void OnDisable()
     {
-        Mortal.onAnyDead -= PlayerDeath;
+        GameManager.onGameFailure -= PlayerDeath;
     }
 
-    void PlayerDeath(Mortal mortal)
+    void PlayerDeath(int waves)
     {
-        if(mortal.gameObject.tag == "Player")
-        {
-            _view.Show();
-        }
+        _waveTxt.text = "Waves Survived "+waves.ToString();
+        _view.Show();
     }
 }

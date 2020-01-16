@@ -13,6 +13,7 @@ public class CursorManager : MonoBehaviour
     {
         ShopViewManager.onShopOpen += EnableShopCursor;
         ShopViewManager.onShopClose += DisableShopCursor;
+        GameManager.onGameFailure += FailureCursor;
     }
 
 
@@ -20,6 +21,7 @@ public class CursorManager : MonoBehaviour
     {
         ShopViewManager.onShopOpen -= EnableShopCursor;
         ShopViewManager.onShopClose -= DisableShopCursor;
+        GameManager.onGameFailure -= FailureCursor;
     }
 
     private void Start()
@@ -35,5 +37,10 @@ public class CursorManager : MonoBehaviour
     private void DisableShopCursor(List<ItemShopMask> inventory)
     {
         Cursor.SetCursor(cursorTexture, hotSpot, cursorMode);
+    }
+
+    private void FailureCursor(int waves)
+    {
+        Cursor.SetCursor(shopTexture, hotSpot, cursorMode);
     }
 }

@@ -10,28 +10,37 @@ public class ShopState : GameState
     }
 
     float _shoptimer;
+    bool _playerReady;
 
     public override GameManager _GameManager {get; set;}
 
     public override void OnStateEnter()
     {
+        _playerReady = false;
         _shoptimer = _GameManager._GameSettings._ShopTime;
         _GameManager._GameSettings._shop.SetActive(true);
         _GameManager._GameSettings._timerHudTxt.enabled = true;
+        PlayerReadyManager.onPlayerReady += SetReady;
     }
 
     public override void OnStateExit()
     {
         _GameManager._GameSettings._shop.SetActive(false);
+        PlayerReadyManager.onPlayerReady -= SetReady;
+    }
+
+    private void SetReady()
+    {
+        _playerReady = true;
     }
 
     public override Type Tick()
     {
         _shoptimer -= Time.deltaTime;
         _GameManager._GameSettings._timerHudTxt.text =
-            "Shopping time will end in.. " + Mathf.Round(_shoptimer).ToString();
+            "Press Space when you are ready for next wave";
 
-        if (_shoptimer <= 0)
+        if (_playerReady)
         {
             return typeof(CountdownState);
         }

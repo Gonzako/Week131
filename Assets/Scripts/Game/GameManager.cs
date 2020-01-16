@@ -9,8 +9,8 @@ public class GameManager : MonoBehaviour
 
     public GameSettings _GameSettings;
 
-    public delegate void GameEvents();
-    public GameEvents onGameFailure;
+    public delegate void GameEvents(int waves);
+    public static GameEvents onGameFailure;
 
     public delegate void GameNPCEvents(int amount);
     public GameNPCEvents onShouldSpawnEnemies;
@@ -24,13 +24,14 @@ public class GameManager : MonoBehaviour
         SetupStates();
    
         _shoppingDone = false;
+        Mortal.onAnyDead += PlayerDeath;
         
         
     }
 
     private void OnDisable()
     {
-       
+        Mortal.onAnyDead -= PlayerDeath;
     }
 
     private void SetupStates()
@@ -49,9 +50,12 @@ public class GameManager : MonoBehaviour
         return _shoppingDone;
     }
 
-    private void PlayerDeath()
+    private void PlayerDeath(Mortal m)
     {
-
+        if(m.tag == "Player")
+        {
+            onGameFailure?.Invoke(_currentWave);
+        }
     }
 
 
