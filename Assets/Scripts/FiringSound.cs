@@ -8,17 +8,12 @@ public class FiringSound : MonoBehaviour
 
     void Start()
     {
-        audioSource = GetComponent<AudioSource>(); 
+       // audioSource = GetComponent<AudioSource>(); 
     }
-
-    void Update()
-    {
-        
-    }
-
 
     private void OnEnable()
     {
+        audioSource = GetComponent<AudioSource>();
         audioSource.Play();  
     }
 }

@@ -49,6 +49,8 @@ public class flashRedOnHit : MonoBehaviour
 
     void OnEnable()
     {
+        defaultColours = new List<Color>();
+        spriteRenderers = new List<SpriteRenderer>();
         spriteRenderers.Add(GetComponent<SpriteRenderer>());
         spriteRenderers.AddRange(GetComponentsInChildren<SpriteRenderer>());
         foreach(SpriteRenderer n in spriteRenderers)

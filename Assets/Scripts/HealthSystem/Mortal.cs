@@ -8,6 +8,10 @@ public class Mortal : MonoBehaviour, IMortal
 
     public static MortalEvents onAnyDead;
     public static MortalEvents onAnyNpcDead;
+
+    public delegate void MortalHealthEvents(int amount, int health, int maxhealth);
+    public MortalHealthEvents onHit;
+    public MortalHealthEvents onHealed;
     
 
     [SerializeField]private int _HealthPoints;
@@ -21,9 +25,13 @@ public class Mortal : MonoBehaviour, IMortal
 
     public void Damage(int amount)
     {
+        onHit?.Invoke(amount, _HealthPoints, _MaxHealth);
         if ((_HealthPoints - amount) <= 0)
         {
             _HealthPoints = 0;
+          
+                
+            
             if (gameObject.tag == "NPC")
             {
                 onAnyNpcDead?.Invoke(this);
@@ -34,6 +42,7 @@ public class Mortal : MonoBehaviour, IMortal
         }
         else
             _HealthPoints -= amount;
+       
     }
 
     public void Heal(int amount)
